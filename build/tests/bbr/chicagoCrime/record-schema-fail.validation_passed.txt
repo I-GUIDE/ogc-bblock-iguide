@@ -1,0 +1,264 @@
+Validation report for iguide.bbr.chicagoCrime - Chicago Crime Record
+Generated 2026-09-29T19:17:09.132261+00:00
+=== General ===
+Test was expected to fail and it did.
+=== End General ===
+
+=== Files ===
+Using record-schema-fail.json from test resources
+JSON-LD context is present - uplifting
+Output JSON-LD record-schema-fail.jsonld created
+Output Turtle record-schema-fail.ttl created
+=== End Files ===
+
+=== JSON Schema ===
+
+** Validation error **
+ValidationError: 'case_number' is a required property
+
+Failed validating 'required' in schema:
+    {'$defs': {'LocalDateTime': {'pattern': '^[0-9]{4}-[0-9]{2}-[0-9]{2}T[0-9]{2}:[0-9]{2}:[0-9]{2}$',
+                                 'type': 'string'},
+               'Point': {'properties': {'coordinates': {'items': {'type': 'number'},
+                                                        'maxItems': 2,
+                                                        'minItems': 2,
+                                                        'type': 'array'},
+                                        'type': {'const': 'Point'}},
+                         'required': ['type', 'coordinates'],
+                         'type': 'object'}},
+     '$schema': 'https://json-schema.org/draft/2020-12/schema',
+     'description': 'A single reported crime incident from the City of '
+                    'Chicago "Crimes - 2001 to Present" dataset.\n'
+                    'Property names follow the Chicago Data Portal '
+                    '(Socrata) API field names; values are typed\n'
+                    '(booleans, numbers, ISO 8601 date-times, GeoJSON) '
+                    'rather than the all-string CSV export.\n',
+     'properties': {'arrest': {'description': 'Whether an arrest was made '
+                                              '(CSV column "Arrest").',
+                               'type': 'boolean',
+                               'x-jsonld-id': 'https://platform.i-guide.io/def/chicago-crime/arrest',
+                               'x-jsonld-type': 'http://www.w3.org/2001/XMLSchema#boolean'},
+                    'beat': {'description': 'Police beat where the '
+                                            'incident occurred; the '
+                                            'smallest police geographic '
+                                            'area (CSV column "Beat").',
+                             'pattern': '^[0-9]{4}$',
+                             'type': 'string',
+                             'x-jsonld-id': 'https://platform.i-guide.io/def/chicago-crime/beat'},
+                    'block': {'description': 'Partially redacted address, '
+                                             'placing the incident on the '
+                                             'same block as the actual '
+                                             'address (CSV column '
+                                             '"Block").',
+                              'type': 'string',
+                              'x-jsonld-id': 'https://platform.i-guide.io/def/chicago-crime/block'},
+                    'case_number': {'description': 'Chicago Police '
+                                                   'Department Records '
+                                                   'Division number, '
+                                                   'unique to the incident '
+                                                   '(CSV column "Case '
+                                                   'Number").',
+                                    'type': 'string',
+                                    'x-jsonld-id': 'https://platform.i-guide.io/def/chicago-crime/caseNumber'},
+                    'community_area': {'description': 'Community area '
+                                                      'where the incident '
+                                                      'occurred; Chicago '
+                                                      'has 77 community '
+                                                      'areas (CSV column '
+                                                      '"Community Area").',
+                                       'maximum': 77,
+                                       'minimum': 1,
+                                       'type': ['integer', 'null'],
+                                       'x-jsonld-id': 'https://platform.i-guide.io/def/chicago-crime/communityArea',
+                                       'x-jsonld-type': 'http://www.w3.org/2001/XMLSchema#integer'},
+                    'date': {'$ref': '#/$defs/LocalDateTime',
+                             'description': 'Date and local '
+                                            '(America/Chicago) time when '
+                                            'the incident occurred, '
+                                            'sometimes a best estimate '
+                                            '(CSV column "Date", converted '
+                                            'from "MM/DD/YYYY hh:mm:ss AM" '
+                                            'to ISO 8601 without offset).',
+                             'x-jsonld-id': 'https://platform.i-guide.io/def/chicago-crime/date',
+                             'x-jsonld-type': 'http://www.w3.org/2001/XMLSchema#dateTime'},
+                    'description': {'description': 'Secondary description '
+                                                   'of the IUCR code (CSV '
+                                                   'column "Description").',
+                                    'type': 'string',
+                                    'x-jsonld-id': 'https://platform.i-guide.io/def/chicago-crime/description'},
+                    'district': {'description': 'Police district where the '
+                                                'incident occurred (CSV '
+                                                'column "District").',
+                                 'pattern': '^[0-9]{3}$',
+                                 'type': ['string', 'null'],
+                                 'x-jsonld-id': 'https://platform.i-guide.io/def/chicago-crime/district'},
+                    'domestic': {'description': 'Whether the incident was '
+                                                'domestic-related as '
+                                                'defined by the Illinois '
+                                                'Domestic Violence Act '
+                                                '(CSV column "Domestic").',
+                                 'type': 'boolean',
+                                 'x-jsonld-id': 'https://platform.i-guide.io/def/chicago-crime/domestic',
+                                 'x-jsonld-type': 'http://www.w3.org/2001/XMLSchema#boolean'},
+                    'fbi_code': {'description': 'Crime classification per '
+                                                'the FBI National '
+                                                'Incident-Based Reporting '
+                                                'System (CSV column "FBI '
+                                                'Code").',
+                                 'pattern': '^[0-9]{2}[A-Z]?$',
+                                 'type': 'string',
+                                 'x-jsonld-id': 'https://platform.i-guide.io/def/chicago-crime/fbiCode'},
+                    'id': {'description': 'Unique identifier for the '
+                                          'record (CSV column "ID").',
+                           'pattern': '^[0-9]+$',
+                           'type': 'string',
+                           'x-jsonld-id': 'http://purl.org/dc/terms/identifier'},
+                    'iucr': {'description': 'Illinois Uniform Crime '
+                                            'Reporting code (CSV column '
+                                            '"IUCR").',
+                             'pattern': '^[0-9A-Z]{4}$',
+                             'type': 'string',
+                             'x-jsonld-id': 'https://platform.i-guide.io/def/chicago-crime/iucr'},
+                    'latitude': {'description': 'WGS 84 latitude of the '
+                                                '(shifted) incident '
+                                                'location (CSV column '
+                                                '"Latitude").',
+                                 'maximum': 90,
+                                 'minimum': -90,
+                                 'type': ['number', 'null'],
+                                 'x-jsonld-id': 'http://www.w3.org/2003/01/geo/wgs84_pos#lat',
+                                 'x-jsonld-type': 'http://www.w3.org/2001/XMLSchema#decimal'},
+                    'location': {'description': 'Incident location as a '
+                                                'GeoJSON Point (WGS 84 '
+                                                'longitude, latitude). The '
+                                                'CSV column "Location" '
+                                                'carries the same point as '
+                                                'WKT, e.g. "POINT '
+                                                '(-87.654831089 '
+                                                '41.772324861)".',
+                                 'oneOf': [{'$ref': '#/$defs/Point'},
+                                           {'type': 'null'}],
+                                 'x-jsonld-id': 'http://www.opengis.net/ont/geosparql#hasGeometry',
+                                 'x-jsonld-type': '@json'},
+                    'location_description': {'description': 'Description '
+                                                            'of the '
+                                                            'location '
+                                                            'where the '
+                                                            'incident '
+                                                            'occurred (CSV '
+                                                            'column '
+                                                            '"Location '
+                                                            'Description").',
+                                             'type': ['string', 'null'],
+                                             'x-jsonld-id': 'https://platform.i-guide.io/def/chicago-crime/locationDescription'},
+                    'longitude': {'description': 'WGS 84 longitude of the '
+                                                 '(shifted) incident '
+                                                 'location (CSV column '
+                                                 '"Longitude").',
+                                  'maximum': 180,
+                                  'minimum': -180,
+                                  'type': ['number', 'null'],
+                                  'x-jsonld-id': 'http://www.w3.org/2003/01/geo/wgs84_pos#long',
+                                  'x-jsonld-type': 'http://www.w3.org/2001/XMLSchema#decimal'},
+                    'primary_type': {'description': 'Primary description '
+                                                    'of the IUCR code (CSV '
+                                                    'column "Primary '
+                                                    'Type").',
+                                     'type': 'string',
+                                     'x-jsonld-id': 'https://platform.i-guide.io/def/chicago-crime/primaryType'},
+                    'updated_on': {'$ref': '#/$defs/LocalDateTime',
+                                   'description': 'Date and local time the '
+                                                  'record was last updated '
+                                                  '(CSV column "Updated '
+                                                  'On").',
+                                   'x-jsonld-id': 'http://purl.org/dc/terms/modified',
+                                   'x-jsonld-type': 'http://www.w3.org/2001/XMLSchema#dateTime'},
+                    'ward': {'description': 'City Council district (ward) '
+                                            'where the incident occurred '
+                                            '(CSV column "Ward").',
+                             'maximum': 50,
+                             'minimum': 1,
+                             'type': ['integer', 'null'],
+                             'x-jsonld-id': 'https://platform.i-guide.io/def/chicago-crime/ward',
+                             'x-jsonld-type': 'http://www.w3.org/2001/XMLSchema#integer'},
+                    'x_coordinate': {'description': 'X coordinate of the '
+                                                    '(shifted) incident '
+                                                    'location in State '
+                                                    'Plane Illinois East '
+                                                    'NAD 1983 projection, '
+                                                    'US feet (EPSG:3435) '
+                                                    '(CSV column "X '
+                                                    'Coordinate").',
+                                     'type': ['number', 'null'],
+                                     'x-jsonld-id': 'https://platform.i-guide.io/def/chicago-crime/xCoordinate',
+                                     'x-jsonld-type': 'http://www.w3.org/2001/XMLSchema#decimal'},
+                    'y_coordinate': {'description': 'Y coordinate of the '
+                                                    '(shifted) incident '
+                                                    'location in State '
+                                                    'Plane Illinois East '
+                                                    'NAD 1983 projection, '
+                                                    'US feet (EPSG:3435) '
+                                                    '(CSV column "Y '
+                                                    'Coordinate").',
+                                     'type': ['number', 'null'],
+                                     'x-jsonld-id': 'https://platform.i-guide.io/def/chicago-crime/yCoordinate',
+                                     'x-jsonld-type': 'http://www.w3.org/2001/XMLSchema#decimal'},
+                    'year': {'description': 'Year the incident occurred '
+                                            '(CSV column "Year").',
+                             'minimum': 2001,
+                             'type': 'integer',
+                             'x-jsonld-id': 'https://platform.i-guide.io/def/chicago-crime/year',
+                             'x-jsonld-type': 'http://www.w3.org/2001/XMLSchema#gYear'}},
+     'required': ['id',
+                  'case_number',
+                  'date',
+                  'iucr',
+                  'primary_type',
+                  'arrest',
+                  'domestic',
+                  'beat',
+                  'fbi_code',
+                  'year'],
+     'title': 'Chicago Crime Record',
+     'type': 'object',
+     'x-jsonld-prefixes': {'ccr': 'https://platform.i-guide.io/def/chicago-crime/',
+                           'dct': 'http://purl.org/dc/terms/',
+                           'geo': 'http://www.opengis.net/ont/geosparql#',
+                           'wgs84': 'http://www.w3.org/2003/01/geo/wgs84_pos#',
+                           'xsd': 'http://www.w3.org/2001/XMLSchema#'}}
+
+On instance:
+    {'arrest': False,
+     'beat': 724,
+     'block': '012XX W MARQUETTE RD',
+     'community_area': 67,
+     'date': '2026-07-26T00:00:00',
+     'description': 'TO PROPERTY',
+     'district': '007',
+     'domestic': False,
+     'fbi_code': '14',
+     'id': '14276240',
+     'iucr': '1310',
+     'latitude': 41.772324861,
+     'location': {'coordinates': [-87.654831089, 41.772324861],
+                  'type': 'Point'},
+     'location_description': 'APARTMENT',
+     'longitude': -87.654831089,
+     'primary_type': 'CRIMINAL DAMAGE',
+     'updated_on': '2026-08-02T15:44:42',
+     'ward': 17,
+     'x_coordinate': 1169332,
+     'y_coordinate': 1860356,
+     'year': 2026}
+=== End JSON Schema ===
+
+=== SHACL ===
+Validation result for _sources/chicagoCrime/rules.shacl:
+  Validation Report
+  Conforms: True
+  
+Focus nodes for _sources/chicagoCrime/rules.shacl:
+ - Shape <https://platform.i-guide.io/def/chicago-crime/shapes/#CrimeRecordShape>: *none*
+
+=== End SHACL ===
+

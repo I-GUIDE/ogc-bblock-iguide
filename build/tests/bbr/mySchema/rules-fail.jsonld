@@ -1,0 +1,11 @@
+{
+  "@context": [
+    "https://raw.githubusercontent.com/I-GUIDE/ogc-bblock-iguide/undefined/build/annotated/bbr/mySchema/context.jsonld",
+    {
+      "mynamespace": "http://example.org/ns1/"
+    }
+  ],
+  "a": "mynamespace:aThing",
+  "b": 23,
+  "c": 25.5
+}

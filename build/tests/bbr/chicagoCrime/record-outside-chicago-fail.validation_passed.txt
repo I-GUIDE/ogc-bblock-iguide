@@ -1,0 +1,44 @@
+Validation report for iguide.bbr.chicagoCrime - Chicago Crime Record
+Generated 2026-09-29T19:17:09.121847+00:00
+=== General ===
+Test was expected to fail and it did.
+=== End General ===
+
+=== Files ===
+Using record-outside-chicago-fail.json from test resources
+JSON-LD context is present - uplifting
+Output JSON-LD record-outside-chicago-fail.jsonld created
+Output Turtle record-outside-chicago-fail.ttl created
+=== End Files ===
+
+=== JSON Schema ===
+Validation passed
+=== End JSON Schema ===
+
+=== SHACL ===
+
+** Validation error **
+Validation result for _sources/chicagoCrime/rules.shacl:
+  Validation Report
+  Conforms: False
+  Results (2):
+  Constraint Violation in MinInclusiveConstraintComponent (http://www.w3.org/ns/shacl#MinInclusiveConstraintComponent):
+  	Severity: sh:Violation
+  	Source Shape: [ sh:maxCount Literal("1", datatype=xsd:integer) ; sh:maxInclusive Literal("42.1", datatype=xsd:decimal) ; sh:message Literal("Latitude must fall within the City of Chicago bounding box (41.6 to 42.1)") ; sh:minInclusive Literal("41.6", datatype=xsd:decimal) ; sh:path wgs84:lat ]
+  	Focus Node: [ ccr:arrest Literal("false" = False, datatype=xsd:boolean) ; ccr:beat Literal("0724") ; ccr:block Literal("012XX W MARQUETTE RD") ; ccr:caseNumber Literal("JK350788") ; ccr:communityArea Literal("67", datatype=xsd:integer) ; ccr:date Literal("2026-07-26T00:00:00" = 2026-07-26 00:00:00, datatype=xsd:dateTime) ; ccr:description Literal("TO PROPERTY") ; ccr:district Literal("007") ; ccr:domestic Literal("false" = False, datatype=xsd:boolean) ; ccr:fbiCode Literal("14") ; ccr:iucr Literal("1310") ; ccr:locationDescription Literal("APARTMENT") ; ccr:primaryType Literal("CRIMINAL DAMAGE") ; ccr:ward Literal("17", datatype=xsd:integer) ; ccr:xCoordinate Literal("1169332", datatype=xsd:decimal) ; ccr:yCoordinate Literal("1860356", datatype=xsd:decimal) ; ccr:year Literal("2026", datatype=xsd:gYear) ; dct:identifier Literal("14276240") ; dct:modified Literal("2026-08-02T15:44:42" = 2026-08-02 15:44:42, datatype=xsd:dateTime) ; geo:hasGeometry Literal("{"coordinates":[-74.0,40.71],"type":"Point"}" = None, datatype=rdf:JSON) ; wgs84:lat Literal("40.71", datatype=xsd:decimal) ; wgs84:long Literal("-74.0", datatype=xsd:decimal) ]
+  	Value Node: Literal("40.71", datatype=xsd:decimal)
+  	Result Path: wgs84:lat
+  	Message: Latitude must fall within the City of Chicago bounding box (41.6 to 42.1)
+  Constraint Violation in MaxInclusiveConstraintComponent (http://www.w3.org/ns/shacl#MaxInclusiveConstraintComponent):
+  	Severity: sh:Violation
+  	Source Shape: [ sh:maxCount Literal("1", datatype=xsd:integer) ; sh:maxInclusive Literal("-87.5", datatype=xsd:decimal) ; sh:message Literal("Longitude must fall within the City of Chicago bounding box (-88.0 to -87.5)") ; sh:minInclusive Literal("-88.0", datatype=xsd:decimal) ; sh:path wgs84:long ]
+  	Focus Node: [ ccr:arrest Literal("false" = False, datatype=xsd:boolean) ; ccr:beat Literal("0724") ; ccr:block Literal("012XX W MARQUETTE RD") ; ccr:caseNumber Literal("JK350788") ; ccr:communityArea Literal("67", datatype=xsd:integer) ; ccr:date Literal("2026-07-26T00:00:00" = 2026-07-26 00:00:00, datatype=xsd:dateTime) ; ccr:description Literal("TO PROPERTY") ; ccr:district Literal("007") ; ccr:domestic Literal("false" = False, datatype=xsd:boolean) ; ccr:fbiCode Literal("14") ; ccr:iucr Literal("1310") ; ccr:locationDescription Literal("APARTMENT") ; ccr:primaryType Literal("CRIMINAL DAMAGE") ; ccr:ward Literal("17", datatype=xsd:integer) ; ccr:xCoordinate Literal("1169332", datatype=xsd:decimal) ; ccr:yCoordinate Literal("1860356", datatype=xsd:decimal) ; ccr:year Literal("2026", datatype=xsd:gYear) ; dct:identifier Literal("14276240") ; dct:modified Literal("2026-08-02T15:44:42" = 2026-08-02 15:44:42, datatype=xsd:dateTime) ; geo:hasGeometry Literal("{"coordinates":[-74.0,40.71],"type":"Point"}" = None, datatype=rdf:JSON) ; wgs84:lat Literal("40.71", datatype=xsd:decimal) ; wgs84:long Literal("-74.0", datatype=xsd:decimal) ]
+  	Value Node: Literal("-74.0", datatype=xsd:decimal)
+  	Result Path: wgs84:long
+  	Message: Longitude must fall within the City of Chicago bounding box (-88.0 to -87.5)
+  
+Focus nodes for _sources/chicagoCrime/rules.shacl:
+ - Shape <https://platform.i-guide.io/def/chicago-crime/shapes/#CrimeRecordShape>: _:N17e09a7ae4b4400994d91e17ef484b83
+
+=== End SHACL ===
+

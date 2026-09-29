@@ -1,0 +1,218 @@
+{
+  "metaRegistry": "https://w3id.org/ogc/bblocks/meta-register.json",
+  "name": "I-GUIDE Building Blocks",
+  "abstract": "OGC Building Blocks describing datasets published on the [I-GUIDE Platform](https://platform.i-guide.io/).\n",
+  "description": "Schemas, JSON-LD semantic annotations and SHACL rules for datasets hosted on the I-GUIDE Platform,\nso that their records can be validated and published as linked data.\n",
+  "modified": "2026-09-29T19:17:07.585840",
+  "tooling": {
+    "bblocks-postprocess": {
+      "commitId": "\"6411aed037da38c6d9079d9350eca33d004a4d0c",
+      "shortCommitId": "\"6411ae",
+      "date": "2026-09-23T12:30:49+00:00\""
+    }
+  },
+  "gitRepository": "https://github.com/I-GUIDE/ogc-bblock-iguide",
+  "gitHubRepository": "https://github.com/I-GUIDE/ogc-bblock-iguide/blob/master/",
+  "baseURL": "https://raw.githubusercontent.com/I-GUIDE/ogc-bblock-iguide/undefined/",
+  "viewerURL": "https://raw.githubusercontent.com/I-GUIDE/ogc-bblock-iguide/undefined/",
+  "validationReport": "https://raw.githubusercontent.com/I-GUIDE/ogc-bblock-iguide/undefined/build/tests/report.html",
+  "validationReportJson": "https://raw.githubusercontent.com/I-GUIDE/ogc-bblock-iguide/undefined/build/tests/report.json",
+  "imports": [
+    "https://opengeospatial.github.io/bblocks/register.json"
+  ],
+  "bblocks": [
+    {
+      "itemIdentifier": "iguide.bbr.chicagoCrime",
+      "$schema": "metaschema.yaml",
+      "name": "Chicago Crime Record",
+      "abstract": "Schema and semantic annotation for a single reported crime incident from the City of Chicago 'Crimes - 2001 to Present' dataset, as published on the I-GUIDE Platform (Chicago Crime data 2026).",
+      "status": "under-development",
+      "dateTimeAddition": "2026-09-29T00:00:00Z",
+      "itemClass": "schema",
+      "register": "iguide-building-block-register",
+      "version": "0.1",
+      "link": "https://platform.i-guide.io/datasets/265e6957-7ecf-48e0-a179-b498533eb627",
+      "sources": [
+        {
+          "title": "I-GUIDE Platform - Chicago Crime data 2026",
+          "link": "https://platform.i-guide.io/datasets/265e6957-7ecf-48e0-a179-b498533eb627"
+        },
+        {
+          "title": "Chicago Data Portal - Crimes - 2001 to Present",
+          "link": "https://data.cityofchicago.org/Public-Safety/Crimes-2001-to-Present/ijzp-q8t2"
+        }
+      ],
+      "tags": [
+        "crime",
+        "public-safety",
+        "chicago",
+        "i-guide",
+        "dataset"
+      ],
+      "group": "I-GUIDE Datasets",
+      "shaclShapes": {
+        "iguide.bbr.chicagoCrime": [
+          "https://raw.githubusercontent.com/I-GUIDE/ogc-bblock-iguide/undefined/_sources/chicagoCrime/rules.shacl"
+        ]
+      },
+      "ldContext": "https://raw.githubusercontent.com/I-GUIDE/ogc-bblock-iguide/undefined/build/annotated/bbr/chicagoCrime/context.jsonld",
+      "dateOfLastChange": "2026-09-29",
+      "schema": {
+        "application/yaml": "https://raw.githubusercontent.com/I-GUIDE/ogc-bblock-iguide/undefined/build/annotated/bbr/chicagoCrime/schema.yaml",
+        "application/json": "https://raw.githubusercontent.com/I-GUIDE/ogc-bblock-iguide/undefined/build/annotated/bbr/chicagoCrime/schema.json"
+      },
+      "sourceSchema": "https://raw.githubusercontent.com/I-GUIDE/ogc-bblock-iguide/undefined/_sources/chicagoCrime/schema.yaml",
+      "sourceLdContext": "https://raw.githubusercontent.com/I-GUIDE/ogc-bblock-iguide/undefined/_sources/chicagoCrime/context.jsonld",
+      "resolvedSchemaProperties": "https://raw.githubusercontent.com/I-GUIDE/ogc-bblock-iguide/undefined/build/annotated/bbr/chicagoCrime/resolvedProperties.json",
+      "sourceFiles": "https://raw.githubusercontent.com/I-GUIDE/ogc-bblock-iguide/undefined/_sources/chicagoCrime/",
+      "validationPassed": true,
+      "testOutputs": "https://github.com/I-GUIDE/ogc-bblock-iguide/blob/master/build/tests/bbr/chicagoCrime/",
+      "documentation": {
+        "markdown": {
+          "mediatype": "text/markdown",
+          "url": "https://raw.githubusercontent.com/I-GUIDE/ogc-bblock-iguide/undefined/build/generateddocs/markdown/bbr/chicagoCrime/index.md"
+        },
+        "json-full": {
+          "mediatype": "application/json",
+          "url": "https://raw.githubusercontent.com/I-GUIDE/ogc-bblock-iguide/undefined/build/generateddocs/json-full/bbr/chicagoCrime/index.json"
+        },
+        "bblocks-viewer": {
+          "mediatype": "text/html",
+          "url": "https://raw.githubusercontent.com/I-GUIDE/ogc-bblock-iguide/undefined/bblock/iguide.bbr.chicagoCrime"
+        }
+      }
+    },
+    {
+      "itemIdentifier": "iguide.bbr.mySchema",
+      "$schema": "metaschema.yaml",
+      "name": "My Schema",
+      "abstract": "An example schema defining the set of properties of any type of object.",
+      "status": "under-development",
+      "dateTimeAddition": "2023-04-05T00:00:00Z",
+      "itemClass": "schema",
+      "register": "ogc-building-block-register",
+      "version": "0.1",
+      "link": "https://github.com/opengeospatial/bblock-template",
+      "sources": [
+        {
+          "title": "Sample source document",
+          "link": "https://example.com/sources/1"
+        }
+      ],
+      "tags": [
+        "templates"
+      ],
+      "shaclShapes": {
+        "iguide.bbr.mySchema": [
+          "https://raw.githubusercontent.com/I-GUIDE/ogc-bblock-iguide/undefined/_sources/mySchema/shapes.shacl"
+        ]
+      },
+      "ldContext": "https://raw.githubusercontent.com/I-GUIDE/ogc-bblock-iguide/undefined/build/annotated/bbr/mySchema/context.jsonld",
+      "dateOfLastChange": "2023-04-05",
+      "schema": {
+        "application/yaml": "https://raw.githubusercontent.com/I-GUIDE/ogc-bblock-iguide/undefined/build/annotated/bbr/mySchema/schema.yaml",
+        "application/json": "https://raw.githubusercontent.com/I-GUIDE/ogc-bblock-iguide/undefined/build/annotated/bbr/mySchema/schema.json"
+      },
+      "sourceSchema": "https://raw.githubusercontent.com/I-GUIDE/ogc-bblock-iguide/undefined/_sources/mySchema/schema.yaml",
+      "sourceLdContext": "https://raw.githubusercontent.com/I-GUIDE/ogc-bblock-iguide/undefined/_sources/mySchema/context.jsonld",
+      "resolvedSchemaProperties": "https://raw.githubusercontent.com/I-GUIDE/ogc-bblock-iguide/undefined/build/annotated/bbr/mySchema/resolvedProperties.json",
+      "sourceFiles": "https://raw.githubusercontent.com/I-GUIDE/ogc-bblock-iguide/undefined/_sources/mySchema/",
+      "validationPassed": true,
+      "testOutputs": "https://github.com/I-GUIDE/ogc-bblock-iguide/blob/master/build/tests/bbr/mySchema/",
+      "documentation": {
+        "markdown": {
+          "mediatype": "text/markdown",
+          "url": "https://raw.githubusercontent.com/I-GUIDE/ogc-bblock-iguide/undefined/build/generateddocs/markdown/bbr/mySchema/index.md"
+        },
+        "json-full": {
+          "mediatype": "application/json",
+          "url": "https://raw.githubusercontent.com/I-GUIDE/ogc-bblock-iguide/undefined/build/generateddocs/json-full/bbr/mySchema/index.json"
+        },
+        "bblocks-viewer": {
+          "mediatype": "text/html",
+          "url": "https://raw.githubusercontent.com/I-GUIDE/ogc-bblock-iguide/undefined/bblock/iguide.bbr.mySchema"
+        }
+      }
+    },
+    {
+      "itemIdentifier": "iguide.bbr.myFeature",
+      "name": "Custom Feature",
+      "abstract": "This examples shows a simple customisation for OGC API Feature schemas",
+      "status": "under-development",
+      "dateTimeAddition": "2023-05-19T00:00:00Z",
+      "itemClass": "schema",
+      "register": "ogc-building-block-examples",
+      "version": "1.0",
+      "sources": [
+        {
+          "title": "OGC API - Features, Part 1, 7.16.2: Feature Response",
+          "link": "https://docs.ogc.org/is/17-069r3/17-069r3.html#_response_7"
+        }
+      ],
+      "dependsOn": [
+        "bblocks://iguide.bbr.mySchema",
+        "bblocks://ogc.geo.features.feature"
+      ],
+      "tags": [
+        "feature",
+        "examples"
+      ],
+      "group": "Examples",
+      "highlighted": true,
+      "shaclShapes": {
+        "iguide.bbr.mySchema": [
+          "https://raw.githubusercontent.com/I-GUIDE/ogc-bblock-iguide/undefined/_sources/mySchema/shapes.shacl"
+        ],
+        "ogc.geo.features.feature": [
+          "https://opengeospatial.github.io/bblocks/registereditems/geo/features/feature/shapes.shacl"
+        ]
+      },
+      "dateOfLastChange": "2023-05-19",
+      "schema": {
+        "application/yaml": "https://raw.githubusercontent.com/I-GUIDE/ogc-bblock-iguide/undefined/build/annotated/bbr/myFeature/schema.yaml",
+        "application/json": "https://raw.githubusercontent.com/I-GUIDE/ogc-bblock-iguide/undefined/build/annotated/bbr/myFeature/schema.json"
+      },
+      "sourceSchema": "https://raw.githubusercontent.com/I-GUIDE/ogc-bblock-iguide/undefined/_sources/myFeature/schema.yaml",
+      "ldContext": "https://raw.githubusercontent.com/I-GUIDE/ogc-bblock-iguide/undefined/build/annotated/bbr/myFeature/context.jsonld",
+      "resolvedSchemaProperties": "https://raw.githubusercontent.com/I-GUIDE/ogc-bblock-iguide/undefined/build/annotated/bbr/myFeature/resolvedProperties.json",
+      "sourceFiles": "https://raw.githubusercontent.com/I-GUIDE/ogc-bblock-iguide/undefined/_sources/myFeature/",
+      "validationPassed": true,
+      "testOutputs": "https://github.com/I-GUIDE/ogc-bblock-iguide/blob/master/build/tests/bbr/myFeature/",
+      "documentation": {
+        "markdown": {
+          "mediatype": "text/markdown",
+          "url": "https://raw.githubusercontent.com/I-GUIDE/ogc-bblock-iguide/undefined/build/generateddocs/markdown/bbr/myFeature/index.md"
+        },
+        "json-full": {
+          "mediatype": "application/json",
+          "url": "https://raw.githubusercontent.com/I-GUIDE/ogc-bblock-iguide/undefined/build/generateddocs/json-full/bbr/myFeature/index.json"
+        },
+        "bblocks-viewer": {
+          "mediatype": "text/html",
+          "url": "https://raw.githubusercontent.com/I-GUIDE/ogc-bblock-iguide/undefined/bblock/iguide.bbr.myFeature"
+        }
+      }
+    }
+  ],
+  "remoteCacheDir": "https://raw.githubusercontent.com/I-GUIDE/ogc-bblock-iguide/undefined/build/annotated/_cache",
+  "links": [
+    {
+      "rel": "self",
+      "href": "https://raw.githubusercontent.com/I-GUIDE/ogc-bblock-iguide/undefined/build/register.json",
+      "type": "application/json",
+      "title": "This Building Blocks Register in JSON format"
+    },
+    {
+      "rel": "self",
+      "href": "https://raw.githubusercontent.com/I-GUIDE/ogc-bblock-iguide/undefined/build/bblocks.ttl",
+      "type": "text/turtle",
+      "title": "This Building Blocks Register in RDF Turtle format"
+    },
+    {
+      "rel": "self",
+      "href": "https://raw.githubusercontent.com/I-GUIDE/ogc-bblock-iguide/undefined/build/bblocks.jsonld",
+      "type": "application/ld+json",
+      "title": "This Building Blocks Register in JSON-LD format"
+    }
+  ]
+}

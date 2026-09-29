@@ -1,0 +1,964 @@
+
+
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Building Blocks validation report</title>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+        <style>
+            .entry-message {
+                white-space: pre-wrap;
+                font-size: 80%;
+                line-height: 1.1;
+            }
+            *[data-bs-toggle] .caret {
+                display: inline-block;
+                transform: rotate(90deg);
+                transition: transform 0.25s;
+            }
+            *[data-bs-toggle].collapsed .caret {
+                transform: rotate(0deg);
+            }
+            .highlighted {
+                animation: highlight-border 3500ms ease-out;
+            }
+            .highlighted h2 button {
+                animation: highlight 3500ms ease-out;
+            }
+            @keyframes highlight {
+                0% {
+                    background: #ffff90;
+                }
+                100% {
+                    background: var(--bs-accordion-active-bg);
+                }
+            }
+            @keyframes highlight-border {
+                0% {
+                    border-color: red;
+                    border-width: 2px;
+                }
+                100% {
+                    border-color: var(--bs-accordion-border-color);
+                    border-width: var(--bs-accordion-border-width);
+                }
+            }
+            .anchor {
+                color: black;
+                opacity: 0;
+                text-decoration: none;
+                margin-left: 0.5em;
+                margin-right: 0.5em;
+            }
+            .anchor-container:hover .anchor {
+                opacity: 60%;
+            }
+            .anchor-container:hover .anchor:hover {
+                opacity: 100%;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <h1 class="title">Building blocks validation report</h1>
+            <small class="datetime">Generated at 2026-09-29T19:17:09.427154+00:00</small>
+                <p class="summary fw-semibold text-success">
+                    Number of passing building blocks: 3 / 3 (100%)
+                </p>
+            <div class="text-end small" id="expand-collapse">
+                <a href="#" class="expand-all">Expand all</a>
+                <a href="#" class="collapse-all">Collapse all</a>
+            </div>
+                <div class="accordion mt-2" id="bblock-reports">
+                        <div class="accordion-item bblock-report" data-bblock-id="iguide.bbr.chicagoCrime" id="bblock-iguide.bbr.chicagoCrime">
+                            <h2 class="accordion-header bblock-title anchor-container">
+                                <button class="accordion-button collapsed" type="button"
+                                    data-bs-toggle="collapse"
+                                    data-bs-target="#bblock-collapse-iguide\.bbr\.chicagoCrime">
+                                    <div class="flex-fill">
+                                        Chicago Crime Record
+                                        <small class="ms-2 bblock-id">iguide.bbr.chicagoCrime</small>
+                                        <a class="anchor" href="#bblock-iguide.bbr.chicagoCrime">¶</a>
+                                    </div>
+
+                                    <span class="badge text-bg-success me-2">
+                                            Passed
+                                            (100% passed)
+                                    </span>
+                                </button>
+                            </h2>
+                            <div class="accordion-collapse collapse " id="bblock-collapse-iguide.bbr.chicagoCrime">
+                                <div class="accordion-body">
+                                        <p class="summary fw-semibold text-success">
+                                            Test passed: 5 / 5
+                                        </p>
+                                        <div class="card mb-2 validation-item require-fail" id="item-iguide.bbr.chicagoCrime-1">
+                                            <div class="card-body">
+                                                <div class="card-title mb-0 anchor-container">
+                                                    <button type="button" class="btn btn-sm btn-primary collapsed"
+                                                            data-bs-toggle="collapse" data-bs-target="#uid-1"
+                                                            aria-expanded="false" aria-controls="uid-1"
+                                                            style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;">
+                                                        <i class="bi bi-caret-right-fill caret"></i>
+                                                        Details
+                                                    </button>
+                                                    <a href="../../_sources/chicagoCrime/tests/record-outside-chicago-fail.json" target="_blank">record-outside-chicago-fail.json</a>
+                                                    <span class="badge bg-secondary test_resource">Test resource</span>
+                                                        <span class="badge text-bg-info">Requires fail</span>
+                                                    <a class="anchor" href="#item-iguide.bbr.chicagoCrime-1">¶</a>
+                                                    <div class="float-end">
+                                                            <span class="badge text-bg-success me-2">Passed</span>
+                                                    </div>
+                                                </div>
+                                                <div class="card-text mt-2 validation-text collapse" id="uid-1">
+                                                    <div class="validation-text-inner">
+                                                                    <div class="font-monospace subsection-title mt-2">General</div>
+                                                                
+                                                                    
+                                                                    <div class="font-monospace entry-message section-general ">Test was expected to fail and it did.</div>
+                                                                    <div class="font-monospace subsection-title mt-2">Files</div>
+                                                                
+                                                                    
+                                                                    <div class="font-monospace entry-message section-files ">Using record-outside-chicago-fail.json from test resources</div>
+                                                                    
+                                                                    <div class="font-monospace entry-message section-files ">JSON-LD context is present - uplifting</div>
+                                                                    
+                                                                    <div class="font-monospace entry-message section-files ">Output JSON-LD record-outside-chicago-fail.jsonld created</div>
+                                                                    
+                                                                    <div class="font-monospace entry-message section-files ">Output Turtle record-outside-chicago-fail.ttl created</div>
+                                                                    <div class="font-monospace subsection-title mt-2">JSON Schema</div>
+                                                                
+                                                                    
+                                                                    <div class="font-monospace entry-message section-json_schema ">Validation passed</div>
+                                                                    <div class="font-monospace subsection-title mt-2">SHACL</div>
+                                                                
+                                                                    
+                                                                    <div class="font-monospace entry-message section-shacl text-danger">Validation result for _sources/chicagoCrime/rules.shacl:
+  Validation Report
+  Conforms: False
+  Results (2):
+  Constraint Violation in MinInclusiveConstraintComponent (http://www.w3.org/ns/shacl#MinInclusiveConstraintComponent):
+  	Severity: sh:Violation
+  	Source Shape: [ sh:maxCount Literal(&quot;1&quot;, datatype=xsd:integer) ; sh:maxInclusive Literal(&quot;42.1&quot;, datatype=xsd:decimal) ; sh:message Literal(&quot;Latitude must fall within the City of Chicago bounding box (41.6 to 42.1)&quot;) ; sh:minInclusive Literal(&quot;41.6&quot;, datatype=xsd:decimal) ; sh:path wgs84:lat ]
+  	Focus Node: [ ccr:arrest Literal(&quot;false&quot; = False, datatype=xsd:boolean) ; ccr:beat Literal(&quot;0724&quot;) ; ccr:block Literal(&quot;012XX W MARQUETTE RD&quot;) ; ccr:caseNumber Literal(&quot;JK350788&quot;) ; ccr:communityArea Literal(&quot;67&quot;, datatype=xsd:integer) ; ccr:date Literal(&quot;2026-07-26T00:00:00&quot; = 2026-07-26 00:00:00, datatype=xsd:dateTime) ; ccr:description Literal(&quot;TO PROPERTY&quot;) ; ccr:district Literal(&quot;007&quot;) ; ccr:domestic Literal(&quot;false&quot; = False, datatype=xsd:boolean) ; ccr:fbiCode Literal(&quot;14&quot;) ; ccr:iucr Literal(&quot;1310&quot;) ; ccr:locationDescription Literal(&quot;APARTMENT&quot;) ; ccr:primaryType Literal(&quot;CRIMINAL DAMAGE&quot;) ; ccr:ward Literal(&quot;17&quot;, datatype=xsd:integer) ; ccr:xCoordinate Literal(&quot;1169332&quot;, datatype=xsd:decimal) ; ccr:yCoordinate Literal(&quot;1860356&quot;, datatype=xsd:decimal) ; ccr:year Literal(&quot;2026&quot;, datatype=xsd:gYear) ; dct:identifier Literal(&quot;14276240&quot;) ; dct:modified Literal(&quot;2026-08-02T15:44:42&quot; = 2026-08-02 15:44:42, datatype=xsd:dateTime) ; geo:hasGeometry Literal(&quot;{&quot;coordinates&quot;:[-74.0,40.71],&quot;type&quot;:&quot;Point&quot;}&quot; = None, datatype=rdf:JSON) ; wgs84:lat Literal(&quot;40.71&quot;, datatype=xsd:decimal) ; wgs84:long Literal(&quot;-74.0&quot;, datatype=xsd:decimal) ]
+  	Value Node: Literal(&quot;40.71&quot;, datatype=xsd:decimal)
+  	Result Path: wgs84:lat
+  	Message: Latitude must fall within the City of Chicago bounding box (41.6 to 42.1)
+  Constraint Violation in MaxInclusiveConstraintComponent (http://www.w3.org/ns/shacl#MaxInclusiveConstraintComponent):
+  	Severity: sh:Violation
+  	Source Shape: [ sh:maxCount Literal(&quot;1&quot;, datatype=xsd:integer) ; sh:maxInclusive Literal(&quot;-87.5&quot;, datatype=xsd:decimal) ; sh:message Literal(&quot;Longitude must fall within the City of Chicago bounding box (-88.0 to -87.5)&quot;) ; sh:minInclusive Literal(&quot;-88.0&quot;, datatype=xsd:decimal) ; sh:path wgs84:long ]
+  	Focus Node: [ ccr:arrest Literal(&quot;false&quot; = False, datatype=xsd:boolean) ; ccr:beat Literal(&quot;0724&quot;) ; ccr:block Literal(&quot;012XX W MARQUETTE RD&quot;) ; ccr:caseNumber Literal(&quot;JK350788&quot;) ; ccr:communityArea Literal(&quot;67&quot;, datatype=xsd:integer) ; ccr:date Literal(&quot;2026-07-26T00:00:00&quot; = 2026-07-26 00:00:00, datatype=xsd:dateTime) ; ccr:description Literal(&quot;TO PROPERTY&quot;) ; ccr:district Literal(&quot;007&quot;) ; ccr:domestic Literal(&quot;false&quot; = False, datatype=xsd:boolean) ; ccr:fbiCode Literal(&quot;14&quot;) ; ccr:iucr Literal(&quot;1310&quot;) ; ccr:locationDescription Literal(&quot;APARTMENT&quot;) ; ccr:primaryType Literal(&quot;CRIMINAL DAMAGE&quot;) ; ccr:ward Literal(&quot;17&quot;, datatype=xsd:integer) ; ccr:xCoordinate Literal(&quot;1169332&quot;, datatype=xsd:decimal) ; ccr:yCoordinate Literal(&quot;1860356&quot;, datatype=xsd:decimal) ; ccr:year Literal(&quot;2026&quot;, datatype=xsd:gYear) ; dct:identifier Literal(&quot;14276240&quot;) ; dct:modified Literal(&quot;2026-08-02T15:44:42&quot; = 2026-08-02 15:44:42, datatype=xsd:dateTime) ; geo:hasGeometry Literal(&quot;{&quot;coordinates&quot;:[-74.0,40.71],&quot;type&quot;:&quot;Point&quot;}&quot; = None, datatype=rdf:JSON) ; wgs84:lat Literal(&quot;40.71&quot;, datatype=xsd:decimal) ; wgs84:long Literal(&quot;-74.0&quot;, datatype=xsd:decimal) ]
+  	Value Node: Literal(&quot;-74.0&quot;, datatype=xsd:decimal)
+  	Result Path: wgs84:long
+  	Message: Longitude must fall within the City of Chicago bounding box (-88.0 to -87.5)
+  </div>
+                                                                    
+                                                                    <div class="font-monospace entry-message section-shacl ">Focus nodes for _sources/chicagoCrime/rules.shacl:
+ - Shape &lt;https://platform.i-guide.io/def/chicago-crime/shapes/#CrimeRecordShape&gt;: _:N17e09a7ae4b4400994d91e17ef484b83
+</div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="card mb-2 validation-item require-fail" id="item-iguide.bbr.chicagoCrime-2">
+                                            <div class="card-body">
+                                                <div class="card-title mb-0 anchor-container">
+                                                    <button type="button" class="btn btn-sm btn-primary collapsed"
+                                                            data-bs-toggle="collapse" data-bs-target="#uid-2"
+                                                            aria-expanded="false" aria-controls="uid-2"
+                                                            style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;">
+                                                        <i class="bi bi-caret-right-fill caret"></i>
+                                                        Details
+                                                    </button>
+                                                    <a href="../../_sources/chicagoCrime/tests/record-schema-fail.json" target="_blank">record-schema-fail.json</a>
+                                                    <span class="badge bg-secondary test_resource">Test resource</span>
+                                                        <span class="badge text-bg-info">Requires fail</span>
+                                                    <a class="anchor" href="#item-iguide.bbr.chicagoCrime-2">¶</a>
+                                                    <div class="float-end">
+                                                            <span class="badge text-bg-success me-2">Passed</span>
+                                                    </div>
+                                                </div>
+                                                <div class="card-text mt-2 validation-text collapse" id="uid-2">
+                                                    <div class="validation-text-inner">
+                                                                    <div class="font-monospace subsection-title mt-2">General</div>
+                                                                
+                                                                    
+                                                                    <div class="font-monospace entry-message section-general ">Test was expected to fail and it did.</div>
+                                                                    <div class="font-monospace subsection-title mt-2">Files</div>
+                                                                
+                                                                    
+                                                                    <div class="font-monospace entry-message section-files ">Using record-schema-fail.json from test resources</div>
+                                                                    
+                                                                    <div class="font-monospace entry-message section-files ">JSON-LD context is present - uplifting</div>
+                                                                    
+                                                                    <div class="font-monospace entry-message section-files ">Output JSON-LD record-schema-fail.jsonld created</div>
+                                                                    
+                                                                    <div class="font-monospace entry-message section-files ">Output Turtle record-schema-fail.ttl created</div>
+                                                                    <div class="font-monospace subsection-title mt-2">JSON Schema</div>
+                                                                
+                                                                    
+                                                                    <div class="font-monospace entry-message section-json_schema text-danger">ValidationError: &#x27;case_number&#x27; is a required property
+
+Failed validating &#x27;required&#x27; in schema:
+    {&#x27;$defs&#x27;: {&#x27;LocalDateTime&#x27;: {&#x27;pattern&#x27;: &#x27;^[0-9]{4}-[0-9]{2}-[0-9]{2}T[0-9]{2}:[0-9]{2}:[0-9]{2}$&#x27;,
+                                 &#x27;type&#x27;: &#x27;string&#x27;},
+               &#x27;Point&#x27;: {&#x27;properties&#x27;: {&#x27;coordinates&#x27;: {&#x27;items&#x27;: {&#x27;type&#x27;: &#x27;number&#x27;},
+                                                        &#x27;maxItems&#x27;: 2,
+                                                        &#x27;minItems&#x27;: 2,
+                                                        &#x27;type&#x27;: &#x27;array&#x27;},
+                                        &#x27;type&#x27;: {&#x27;const&#x27;: &#x27;Point&#x27;}},
+                         &#x27;required&#x27;: [&#x27;type&#x27;, &#x27;coordinates&#x27;],
+                         &#x27;type&#x27;: &#x27;object&#x27;}},
+     &#x27;$schema&#x27;: &#x27;https://json-schema.org/draft/2020-12/schema&#x27;,
+     &#x27;description&#x27;: &#x27;A single reported crime incident from the City of &#x27;
+                    &#x27;Chicago &quot;Crimes - 2001 to Present&quot; dataset.\n&#x27;
+                    &#x27;Property names follow the Chicago Data Portal &#x27;
+                    &#x27;(Socrata) API field names; values are typed\n&#x27;
+                    &#x27;(booleans, numbers, ISO 8601 date-times, GeoJSON) &#x27;
+                    &#x27;rather than the all-string CSV export.\n&#x27;,
+     &#x27;properties&#x27;: {&#x27;arrest&#x27;: {&#x27;description&#x27;: &#x27;Whether an arrest was made &#x27;
+                                              &#x27;(CSV column &quot;Arrest&quot;).&#x27;,
+                               &#x27;type&#x27;: &#x27;boolean&#x27;,
+                               &#x27;x-jsonld-id&#x27;: &#x27;https://platform.i-guide.io/def/chicago-crime/arrest&#x27;,
+                               &#x27;x-jsonld-type&#x27;: &#x27;http://www.w3.org/2001/XMLSchema#boolean&#x27;},
+                    &#x27;beat&#x27;: {&#x27;description&#x27;: &#x27;Police beat where the &#x27;
+                                            &#x27;incident occurred; the &#x27;
+                                            &#x27;smallest police geographic &#x27;
+                                            &#x27;area (CSV column &quot;Beat&quot;).&#x27;,
+                             &#x27;pattern&#x27;: &#x27;^[0-9]{4}$&#x27;,
+                             &#x27;type&#x27;: &#x27;string&#x27;,
+                             &#x27;x-jsonld-id&#x27;: &#x27;https://platform.i-guide.io/def/chicago-crime/beat&#x27;},
+                    &#x27;block&#x27;: {&#x27;description&#x27;: &#x27;Partially redacted address, &#x27;
+                                             &#x27;placing the incident on the &#x27;
+                                             &#x27;same block as the actual &#x27;
+                                             &#x27;address (CSV column &#x27;
+                                             &#x27;&quot;Block&quot;).&#x27;,
+                              &#x27;type&#x27;: &#x27;string&#x27;,
+                              &#x27;x-jsonld-id&#x27;: &#x27;https://platform.i-guide.io/def/chicago-crime/block&#x27;},
+                    &#x27;case_number&#x27;: {&#x27;description&#x27;: &#x27;Chicago Police &#x27;
+                                                   &#x27;Department Records &#x27;
+                                                   &#x27;Division number, &#x27;
+                                                   &#x27;unique to the incident &#x27;
+                                                   &#x27;(CSV column &quot;Case &#x27;
+                                                   &#x27;Number&quot;).&#x27;,
+                                    &#x27;type&#x27;: &#x27;string&#x27;,
+                                    &#x27;x-jsonld-id&#x27;: &#x27;https://platform.i-guide.io/def/chicago-crime/caseNumber&#x27;},
+                    &#x27;community_area&#x27;: {&#x27;description&#x27;: &#x27;Community area &#x27;
+                                                      &#x27;where the incident &#x27;
+                                                      &#x27;occurred; Chicago &#x27;
+                                                      &#x27;has 77 community &#x27;
+                                                      &#x27;areas (CSV column &#x27;
+                                                      &#x27;&quot;Community Area&quot;).&#x27;,
+                                       &#x27;maximum&#x27;: 77,
+                                       &#x27;minimum&#x27;: 1,
+                                       &#x27;type&#x27;: [&#x27;integer&#x27;, &#x27;null&#x27;],
+                                       &#x27;x-jsonld-id&#x27;: &#x27;https://platform.i-guide.io/def/chicago-crime/communityArea&#x27;,
+                                       &#x27;x-jsonld-type&#x27;: &#x27;http://www.w3.org/2001/XMLSchema#integer&#x27;},
+                    &#x27;date&#x27;: {&#x27;$ref&#x27;: &#x27;#/$defs/LocalDateTime&#x27;,
+                             &#x27;description&#x27;: &#x27;Date and local &#x27;
+                                            &#x27;(America/Chicago) time when &#x27;
+                                            &#x27;the incident occurred, &#x27;
+                                            &#x27;sometimes a best estimate &#x27;
+                                            &#x27;(CSV column &quot;Date&quot;, converted &#x27;
+                                            &#x27;from &quot;MM/DD/YYYY hh:mm:ss AM&quot; &#x27;
+                                            &#x27;to ISO 8601 without offset).&#x27;,
+                             &#x27;x-jsonld-id&#x27;: &#x27;https://platform.i-guide.io/def/chicago-crime/date&#x27;,
+                             &#x27;x-jsonld-type&#x27;: &#x27;http://www.w3.org/2001/XMLSchema#dateTime&#x27;},
+                    &#x27;description&#x27;: {&#x27;description&#x27;: &#x27;Secondary description &#x27;
+                                                   &#x27;of the IUCR code (CSV &#x27;
+                                                   &#x27;column &quot;Description&quot;).&#x27;,
+                                    &#x27;type&#x27;: &#x27;string&#x27;,
+                                    &#x27;x-jsonld-id&#x27;: &#x27;https://platform.i-guide.io/def/chicago-crime/description&#x27;},
+                    &#x27;district&#x27;: {&#x27;description&#x27;: &#x27;Police district where the &#x27;
+                                                &#x27;incident occurred (CSV &#x27;
+                                                &#x27;column &quot;District&quot;).&#x27;,
+                                 &#x27;pattern&#x27;: &#x27;^[0-9]{3}$&#x27;,
+                                 &#x27;type&#x27;: [&#x27;string&#x27;, &#x27;null&#x27;],
+                                 &#x27;x-jsonld-id&#x27;: &#x27;https://platform.i-guide.io/def/chicago-crime/district&#x27;},
+                    &#x27;domestic&#x27;: {&#x27;description&#x27;: &#x27;Whether the incident was &#x27;
+                                                &#x27;domestic-related as &#x27;
+                                                &#x27;defined by the Illinois &#x27;
+                                                &#x27;Domestic Violence Act &#x27;
+                                                &#x27;(CSV column &quot;Domestic&quot;).&#x27;,
+                                 &#x27;type&#x27;: &#x27;boolean&#x27;,
+                                 &#x27;x-jsonld-id&#x27;: &#x27;https://platform.i-guide.io/def/chicago-crime/domestic&#x27;,
+                                 &#x27;x-jsonld-type&#x27;: &#x27;http://www.w3.org/2001/XMLSchema#boolean&#x27;},
+                    &#x27;fbi_code&#x27;: {&#x27;description&#x27;: &#x27;Crime classification per &#x27;
+                                                &#x27;the FBI National &#x27;
+                                                &#x27;Incident-Based Reporting &#x27;
+                                                &#x27;System (CSV column &quot;FBI &#x27;
+                                                &#x27;Code&quot;).&#x27;,
+                                 &#x27;pattern&#x27;: &#x27;^[0-9]{2}[A-Z]?$&#x27;,
+                                 &#x27;type&#x27;: &#x27;string&#x27;,
+                                 &#x27;x-jsonld-id&#x27;: &#x27;https://platform.i-guide.io/def/chicago-crime/fbiCode&#x27;},
+                    &#x27;id&#x27;: {&#x27;description&#x27;: &#x27;Unique identifier for the &#x27;
+                                          &#x27;record (CSV column &quot;ID&quot;).&#x27;,
+                           &#x27;pattern&#x27;: &#x27;^[0-9]+$&#x27;,
+                           &#x27;type&#x27;: &#x27;string&#x27;,
+                           &#x27;x-jsonld-id&#x27;: &#x27;http://purl.org/dc/terms/identifier&#x27;},
+                    &#x27;iucr&#x27;: {&#x27;description&#x27;: &#x27;Illinois Uniform Crime &#x27;
+                                            &#x27;Reporting code (CSV column &#x27;
+                                            &#x27;&quot;IUCR&quot;).&#x27;,
+                             &#x27;pattern&#x27;: &#x27;^[0-9A-Z]{4}$&#x27;,
+                             &#x27;type&#x27;: &#x27;string&#x27;,
+                             &#x27;x-jsonld-id&#x27;: &#x27;https://platform.i-guide.io/def/chicago-crime/iucr&#x27;},
+                    &#x27;latitude&#x27;: {&#x27;description&#x27;: &#x27;WGS 84 latitude of the &#x27;
+                                                &#x27;(shifted) incident &#x27;
+                                                &#x27;location (CSV column &#x27;
+                                                &#x27;&quot;Latitude&quot;).&#x27;,
+                                 &#x27;maximum&#x27;: 90,
+                                 &#x27;minimum&#x27;: -90,
+                                 &#x27;type&#x27;: [&#x27;number&#x27;, &#x27;null&#x27;],
+                                 &#x27;x-jsonld-id&#x27;: &#x27;http://www.w3.org/2003/01/geo/wgs84_pos#lat&#x27;,
+                                 &#x27;x-jsonld-type&#x27;: &#x27;http://www.w3.org/2001/XMLSchema#decimal&#x27;},
+                    &#x27;location&#x27;: {&#x27;description&#x27;: &#x27;Incident location as a &#x27;
+                                                &#x27;GeoJSON Point (WGS 84 &#x27;
+                                                &#x27;longitude, latitude). The &#x27;
+                                                &#x27;CSV column &quot;Location&quot; &#x27;
+                                                &#x27;carries the same point as &#x27;
+                                                &#x27;WKT, e.g. &quot;POINT &#x27;
+                                                &#x27;(-87.654831089 &#x27;
+                                                &#x27;41.772324861)&quot;.&#x27;,
+                                 &#x27;oneOf&#x27;: [{&#x27;$ref&#x27;: &#x27;#/$defs/Point&#x27;},
+                                           {&#x27;type&#x27;: &#x27;null&#x27;}],
+                                 &#x27;x-jsonld-id&#x27;: &#x27;http://www.opengis.net/ont/geosparql#hasGeometry&#x27;,
+                                 &#x27;x-jsonld-type&#x27;: &#x27;@json&#x27;},
+                    &#x27;location_description&#x27;: {&#x27;description&#x27;: &#x27;Description &#x27;
+                                                            &#x27;of the &#x27;
+                                                            &#x27;location &#x27;
+                                                            &#x27;where the &#x27;
+                                                            &#x27;incident &#x27;
+                                                            &#x27;occurred (CSV &#x27;
+                                                            &#x27;column &#x27;
+                                                            &#x27;&quot;Location &#x27;
+                                                            &#x27;Description&quot;).&#x27;,
+                                             &#x27;type&#x27;: [&#x27;string&#x27;, &#x27;null&#x27;],
+                                             &#x27;x-jsonld-id&#x27;: &#x27;https://platform.i-guide.io/def/chicago-crime/locationDescription&#x27;},
+                    &#x27;longitude&#x27;: {&#x27;description&#x27;: &#x27;WGS 84 longitude of the &#x27;
+                                                 &#x27;(shifted) incident &#x27;
+                                                 &#x27;location (CSV column &#x27;
+                                                 &#x27;&quot;Longitude&quot;).&#x27;,
+                                  &#x27;maximum&#x27;: 180,
+                                  &#x27;minimum&#x27;: -180,
+                                  &#x27;type&#x27;: [&#x27;number&#x27;, &#x27;null&#x27;],
+                                  &#x27;x-jsonld-id&#x27;: &#x27;http://www.w3.org/2003/01/geo/wgs84_pos#long&#x27;,
+                                  &#x27;x-jsonld-type&#x27;: &#x27;http://www.w3.org/2001/XMLSchema#decimal&#x27;},
+                    &#x27;primary_type&#x27;: {&#x27;description&#x27;: &#x27;Primary description &#x27;
+                                                    &#x27;of the IUCR code (CSV &#x27;
+                                                    &#x27;column &quot;Primary &#x27;
+                                                    &#x27;Type&quot;).&#x27;,
+                                     &#x27;type&#x27;: &#x27;string&#x27;,
+                                     &#x27;x-jsonld-id&#x27;: &#x27;https://platform.i-guide.io/def/chicago-crime/primaryType&#x27;},
+                    &#x27;updated_on&#x27;: {&#x27;$ref&#x27;: &#x27;#/$defs/LocalDateTime&#x27;,
+                                   &#x27;description&#x27;: &#x27;Date and local time the &#x27;
+                                                  &#x27;record was last updated &#x27;
+                                                  &#x27;(CSV column &quot;Updated &#x27;
+                                                  &#x27;On&quot;).&#x27;,
+                                   &#x27;x-jsonld-id&#x27;: &#x27;http://purl.org/dc/terms/modified&#x27;,
+                                   &#x27;x-jsonld-type&#x27;: &#x27;http://www.w3.org/2001/XMLSchema#dateTime&#x27;},
+                    &#x27;ward&#x27;: {&#x27;description&#x27;: &#x27;City Council district (ward) &#x27;
+                                            &#x27;where the incident occurred &#x27;
+                                            &#x27;(CSV column &quot;Ward&quot;).&#x27;,
+                             &#x27;maximum&#x27;: 50,
+                             &#x27;minimum&#x27;: 1,
+                             &#x27;type&#x27;: [&#x27;integer&#x27;, &#x27;null&#x27;],
+                             &#x27;x-jsonld-id&#x27;: &#x27;https://platform.i-guide.io/def/chicago-crime/ward&#x27;,
+                             &#x27;x-jsonld-type&#x27;: &#x27;http://www.w3.org/2001/XMLSchema#integer&#x27;},
+                    &#x27;x_coordinate&#x27;: {&#x27;description&#x27;: &#x27;X coordinate of the &#x27;
+                                                    &#x27;(shifted) incident &#x27;
+                                                    &#x27;location in State &#x27;
+                                                    &#x27;Plane Illinois East &#x27;
+                                                    &#x27;NAD 1983 projection, &#x27;
+                                                    &#x27;US feet (EPSG:3435) &#x27;
+                                                    &#x27;(CSV column &quot;X &#x27;
+                                                    &#x27;Coordinate&quot;).&#x27;,
+                                     &#x27;type&#x27;: [&#x27;number&#x27;, &#x27;null&#x27;],
+                                     &#x27;x-jsonld-id&#x27;: &#x27;https://platform.i-guide.io/def/chicago-crime/xCoordinate&#x27;,
+                                     &#x27;x-jsonld-type&#x27;: &#x27;http://www.w3.org/2001/XMLSchema#decimal&#x27;},
+                    &#x27;y_coordinate&#x27;: {&#x27;description&#x27;: &#x27;Y coordinate of the &#x27;
+                                                    &#x27;(shifted) incident &#x27;
+                                                    &#x27;location in State &#x27;
+                                                    &#x27;Plane Illinois East &#x27;
+                                                    &#x27;NAD 1983 projection, &#x27;
+                                                    &#x27;US feet (EPSG:3435) &#x27;
+                                                    &#x27;(CSV column &quot;Y &#x27;
+                                                    &#x27;Coordinate&quot;).&#x27;,
+                                     &#x27;type&#x27;: [&#x27;number&#x27;, &#x27;null&#x27;],
+                                     &#x27;x-jsonld-id&#x27;: &#x27;https://platform.i-guide.io/def/chicago-crime/yCoordinate&#x27;,
+                                     &#x27;x-jsonld-type&#x27;: &#x27;http://www.w3.org/2001/XMLSchema#decimal&#x27;},
+                    &#x27;year&#x27;: {&#x27;description&#x27;: &#x27;Year the incident occurred &#x27;
+                                            &#x27;(CSV column &quot;Year&quot;).&#x27;,
+                             &#x27;minimum&#x27;: 2001,
+                             &#x27;type&#x27;: &#x27;integer&#x27;,
+                             &#x27;x-jsonld-id&#x27;: &#x27;https://platform.i-guide.io/def/chicago-crime/year&#x27;,
+                             &#x27;x-jsonld-type&#x27;: &#x27;http://www.w3.org/2001/XMLSchema#gYear&#x27;}},
+     &#x27;required&#x27;: [&#x27;id&#x27;,
+                  &#x27;case_number&#x27;,
+                  &#x27;date&#x27;,
+                  &#x27;iucr&#x27;,
+                  &#x27;primary_type&#x27;,
+                  &#x27;arrest&#x27;,
+                  &#x27;domestic&#x27;,
+                  &#x27;beat&#x27;,
+                  &#x27;fbi_code&#x27;,
+                  &#x27;year&#x27;],
+     &#x27;title&#x27;: &#x27;Chicago Crime Record&#x27;,
+     &#x27;type&#x27;: &#x27;object&#x27;,
+     &#x27;x-jsonld-prefixes&#x27;: {&#x27;ccr&#x27;: &#x27;https://platform.i-guide.io/def/chicago-crime/&#x27;,
+                           &#x27;dct&#x27;: &#x27;http://purl.org/dc/terms/&#x27;,
+                           &#x27;geo&#x27;: &#x27;http://www.opengis.net/ont/geosparql#&#x27;,
+                           &#x27;wgs84&#x27;: &#x27;http://www.w3.org/2003/01/geo/wgs84_pos#&#x27;,
+                           &#x27;xsd&#x27;: &#x27;http://www.w3.org/2001/XMLSchema#&#x27;}}
+
+On instance:
+    {&#x27;arrest&#x27;: False,
+     &#x27;beat&#x27;: 724,
+     &#x27;block&#x27;: &#x27;012XX W MARQUETTE RD&#x27;,
+     &#x27;community_area&#x27;: 67,
+     &#x27;date&#x27;: &#x27;2026-07-26T00:00:00&#x27;,
+     &#x27;description&#x27;: &#x27;TO PROPERTY&#x27;,
+     &#x27;district&#x27;: &#x27;007&#x27;,
+     &#x27;domestic&#x27;: False,
+     &#x27;fbi_code&#x27;: &#x27;14&#x27;,
+     &#x27;id&#x27;: &#x27;14276240&#x27;,
+     &#x27;iucr&#x27;: &#x27;1310&#x27;,
+     &#x27;latitude&#x27;: 41.772324861,
+     &#x27;location&#x27;: {&#x27;coordinates&#x27;: [-87.654831089, 41.772324861],
+                  &#x27;type&#x27;: &#x27;Point&#x27;},
+     &#x27;location_description&#x27;: &#x27;APARTMENT&#x27;,
+     &#x27;longitude&#x27;: -87.654831089,
+     &#x27;primary_type&#x27;: &#x27;CRIMINAL DAMAGE&#x27;,
+     &#x27;updated_on&#x27;: &#x27;2026-08-02T15:44:42&#x27;,
+     &#x27;ward&#x27;: 17,
+     &#x27;x_coordinate&#x27;: 1169332,
+     &#x27;y_coordinate&#x27;: 1860356,
+     &#x27;year&#x27;: 2026}</div>
+                                                                    <div class="font-monospace subsection-title mt-2">SHACL</div>
+                                                                
+                                                                    
+                                                                    <div class="font-monospace entry-message section-shacl ">Validation result for _sources/chicagoCrime/rules.shacl:
+  Validation Report
+  Conforms: True
+  </div>
+                                                                    
+                                                                    <div class="font-monospace entry-message section-shacl ">Focus nodes for _sources/chicagoCrime/rules.shacl:
+ - Shape &lt;https://platform.i-guide.io/def/chicago-crime/shapes/#CrimeRecordShape&gt;: *none*
+</div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="card mb-2 validation-item " id="item-iguide.bbr.chicagoCrime-3">
+                                            <div class="card-body">
+                                                <div class="card-title mb-0 anchor-container">
+                                                    <button type="button" class="btn btn-sm btn-primary collapsed"
+                                                            data-bs-toggle="collapse" data-bs-target="#uid-3"
+                                                            aria-expanded="false" aria-controls="uid-3"
+                                                            style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;">
+                                                        <i class="bi bi-caret-right-fill caret"></i>
+                                                        Details
+                                                    </button>
+                                                    <a href="../../_sources/chicagoCrime/tests/record-valid.json" target="_blank">record-valid.json</a>
+                                                    <span class="badge bg-secondary test_resource">Test resource</span>
+                                                    <a class="anchor" href="#item-iguide.bbr.chicagoCrime-3">¶</a>
+                                                    <div class="float-end">
+                                                            <span class="badge text-bg-success me-2">Passed</span>
+                                                    </div>
+                                                </div>
+                                                <div class="card-text mt-2 validation-text collapse" id="uid-3">
+                                                    <div class="validation-text-inner">
+                                                                    <div class="font-monospace subsection-title mt-2">Files</div>
+                                                                
+                                                                    
+                                                                    <div class="font-monospace entry-message section-files ">Using record-valid.json from test resources</div>
+                                                                    
+                                                                    <div class="font-monospace entry-message section-files ">JSON-LD context is present - uplifting</div>
+                                                                    
+                                                                    <div class="font-monospace entry-message section-files ">Output JSON-LD record-valid.jsonld created</div>
+                                                                    
+                                                                    <div class="font-monospace entry-message section-files ">Output Turtle record-valid.ttl created</div>
+                                                                    <div class="font-monospace subsection-title mt-2">JSON Schema</div>
+                                                                
+                                                                    
+                                                                    <div class="font-monospace entry-message section-json_schema ">Validation passed</div>
+                                                                    <div class="font-monospace subsection-title mt-2">SHACL</div>
+                                                                
+                                                                    
+                                                                    <div class="font-monospace entry-message section-shacl ">Validation result for _sources/chicagoCrime/rules.shacl:
+  Validation Report
+  Conforms: True
+  </div>
+                                                                    
+                                                                    <div class="font-monospace entry-message section-shacl ">Focus nodes for _sources/chicagoCrime/rules.shacl:
+ - Shape &lt;https://platform.i-guide.io/def/chicago-crime/shapes/#CrimeRecordShape&gt;: _:Nd6316ce93ab746df83c22a6c72d05f04
+</div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="card mb-2 validation-item " id="item-iguide.bbr.chicagoCrime-4">
+                                            <div class="card-body">
+                                                <div class="card-title mb-0 anchor-container">
+                                                    <button type="button" class="btn btn-sm btn-primary collapsed"
+                                                            data-bs-toggle="collapse" data-bs-target="#uid-4"
+                                                            aria-expanded="false" aria-controls="uid-4"
+                                                            style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;">
+                                                        <i class="bi bi-caret-right-fill caret"></i>
+                                                        Details
+                                                    </button>
+                                                    <a href="bbr/chicagoCrime/example_1_1.json" target="_blank">example_1_1.json</a>
+                                                    <span class="badge bg-secondary example">Example</span>
+                                                    <a class="anchor" href="#item-iguide.bbr.chicagoCrime-4">¶</a>
+                                                    <div class="float-end">
+                                                            <span class="badge text-bg-success me-2">Passed</span>
+                                                    </div>
+                                                </div>
+                                                <div class="card-text mt-2 validation-text collapse" id="uid-4">
+                                                    <div class="validation-text-inner">
+                                                                    <div class="font-monospace subsection-title mt-2">Files</div>
+                                                                
+                                                                    
+                                                                    <div class="font-monospace entry-message section-files ">Using examples/record.json from examples</div>
+                                                                    
+                                                                    <div class="font-monospace entry-message section-files ">JSON-LD context is present - uplifting</div>
+                                                                    
+                                                                    <div class="font-monospace entry-message section-files ">Output JSON-LD example_1_1.jsonld created</div>
+                                                                    
+                                                                    <div class="font-monospace entry-message section-files ">Output Turtle example_1_1.ttl created</div>
+                                                                    <div class="font-monospace subsection-title mt-2">JSON Schema</div>
+                                                                
+                                                                    
+                                                                    <div class="font-monospace entry-message section-json_schema ">Validation passed</div>
+                                                                    <div class="font-monospace subsection-title mt-2">SHACL</div>
+                                                                
+                                                                    
+                                                                    <div class="font-monospace entry-message section-shacl ">Validation result for _sources/chicagoCrime/rules.shacl:
+  Validation Report
+  Conforms: True
+  </div>
+                                                                    
+                                                                    <div class="font-monospace entry-message section-shacl ">Focus nodes for _sources/chicagoCrime/rules.shacl:
+ - Shape &lt;https://platform.i-guide.io/def/chicago-crime/shapes/#CrimeRecordShape&gt;: _:Ne6f81b4cc4984241b73ed0d5a8327dee
+</div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="card mb-2 validation-item " id="item-iguide.bbr.chicagoCrime-5">
+                                            <div class="card-body">
+                                                <div class="card-title mb-0 anchor-container">
+                                                    <button type="button" class="btn btn-sm btn-primary collapsed"
+                                                            data-bs-toggle="collapse" data-bs-target="#uid-5"
+                                                            aria-expanded="false" aria-controls="uid-5"
+                                                            style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;">
+                                                        <i class="bi bi-caret-right-fill caret"></i>
+                                                        Details
+                                                    </button>
+                                                    <a href="bbr/chicagoCrime/example_2_1.json" target="_blank">example_2_1.json</a>
+                                                    <span class="badge bg-secondary example">Example</span>
+                                                    <a class="anchor" href="#item-iguide.bbr.chicagoCrime-5">¶</a>
+                                                    <div class="float-end">
+                                                            <span class="badge text-bg-success me-2">Passed</span>
+                                                    </div>
+                                                </div>
+                                                <div class="card-text mt-2 validation-text collapse" id="uid-5">
+                                                    <div class="validation-text-inner">
+                                                                    <div class="font-monospace subsection-title mt-2">Files</div>
+                                                                
+                                                                    
+                                                                    <div class="font-monospace entry-message section-files ">Using examples/record-no-location.json from examples</div>
+                                                                    
+                                                                    <div class="font-monospace entry-message section-files ">JSON-LD context is present - uplifting</div>
+                                                                    
+                                                                    <div class="font-monospace entry-message section-files ">Output JSON-LD example_2_1.jsonld created</div>
+                                                                    
+                                                                    <div class="font-monospace entry-message section-files ">Output Turtle example_2_1.ttl created</div>
+                                                                    <div class="font-monospace subsection-title mt-2">JSON Schema</div>
+                                                                
+                                                                    
+                                                                    <div class="font-monospace entry-message section-json_schema ">Validation passed</div>
+                                                                    <div class="font-monospace subsection-title mt-2">SHACL</div>
+                                                                
+                                                                    
+                                                                    <div class="font-monospace entry-message section-shacl ">Validation result for _sources/chicagoCrime/rules.shacl:
+  Validation Report
+  Conforms: True
+  </div>
+                                                                    
+                                                                    <div class="font-monospace entry-message section-shacl ">Focus nodes for _sources/chicagoCrime/rules.shacl:
+ - Shape &lt;https://platform.i-guide.io/def/chicago-crime/shapes/#CrimeRecordShape&gt;: _:Ne481e25876eb4d31a1756f9d74283b75
+</div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item bblock-report" data-bblock-id="iguide.bbr.mySchema" id="bblock-iguide.bbr.mySchema">
+                            <h2 class="accordion-header bblock-title anchor-container">
+                                <button class="accordion-button collapsed" type="button"
+                                    data-bs-toggle="collapse"
+                                    data-bs-target="#bblock-collapse-iguide\.bbr\.mySchema">
+                                    <div class="flex-fill">
+                                        My Schema
+                                        <small class="ms-2 bblock-id">iguide.bbr.mySchema</small>
+                                        <a class="anchor" href="#bblock-iguide.bbr.mySchema">¶</a>
+                                    </div>
+
+                                    <span class="badge text-bg-success me-2">
+                                            Passed
+                                            (100% passed)
+                                    </span>
+                                </button>
+                            </h2>
+                            <div class="accordion-collapse collapse " id="bblock-collapse-iguide.bbr.mySchema">
+                                <div class="accordion-body">
+                                        <p class="summary fw-semibold text-success">
+                                            Test passed: 2 / 2
+                                        </p>
+                                        <div class="card mb-2 validation-item require-fail" id="item-iguide.bbr.mySchema-1">
+                                            <div class="card-body">
+                                                <div class="card-title mb-0 anchor-container">
+                                                    <button type="button" class="btn btn-sm btn-primary collapsed"
+                                                            data-bs-toggle="collapse" data-bs-target="#uid-6"
+                                                            aria-expanded="false" aria-controls="uid-6"
+                                                            style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;">
+                                                        <i class="bi bi-caret-right-fill caret"></i>
+                                                        Details
+                                                    </button>
+                                                    <a href="../../_sources/mySchema/tests/rules-fail.json" target="_blank">rules-fail.json</a>
+                                                    <span class="badge bg-secondary test_resource">Test resource</span>
+                                                        <span class="badge text-bg-info">Requires fail</span>
+                                                    <a class="anchor" href="#item-iguide.bbr.mySchema-1">¶</a>
+                                                    <div class="float-end">
+                                                            <span class="badge text-bg-success me-2">Passed</span>
+                                                    </div>
+                                                </div>
+                                                <div class="card-text mt-2 validation-text collapse" id="uid-6">
+                                                    <div class="validation-text-inner">
+                                                                    <div class="font-monospace subsection-title mt-2">General</div>
+                                                                
+                                                                    
+                                                                    <div class="font-monospace entry-message section-general ">Test was expected to fail and it did.</div>
+                                                                    <div class="font-monospace subsection-title mt-2">Files</div>
+                                                                
+                                                                    
+                                                                    <div class="font-monospace entry-message section-files ">Using rules-fail.json from test resources</div>
+                                                                    
+                                                                    <div class="font-monospace entry-message section-files ">JSON-LD context is present - uplifting</div>
+                                                                    
+                                                                    <div class="font-monospace entry-message section-files ">Output JSON-LD rules-fail.jsonld created</div>
+                                                                    
+                                                                    <div class="font-monospace entry-message section-files ">Output Turtle rules-fail.ttl created</div>
+                                                                    <div class="font-monospace subsection-title mt-2">JSON Schema</div>
+                                                                
+                                                                    
+                                                                    <div class="font-monospace entry-message section-json_schema ">Validation passed</div>
+                                                                    <div class="font-monospace subsection-title mt-2">SHACL</div>
+                                                                
+                                                                    
+                                                                    <div class="font-monospace entry-message section-shacl text-danger">Validation result for _sources/mySchema/shapes.shacl:
+  Validation Report
+  Conforms: False
+  Results (1):
+  Constraint Violation in LessThanConstraintComponent (http://www.w3.org/ns/shacl#LessThanConstraintComponent):
+  	Severity: sh:Violation
+  	Source Shape: [ sh:lessThan ns1:b ; sh:path ns1:c ]
+  	Focus Node: [ ns1:b Literal(&quot;23&quot;, datatype=xsd:integer) ; ns1:c Literal(&quot;25.5&quot;, datatype=xsd:double) ; rdf:type mynamespace:aThing ]
+  	Value Node: Literal(&quot;25.5&quot;, datatype=xsd:double)
+  	Result Path: ns1:c
+  	Message: Value of [ ns1:b Literal(&quot;23&quot;, datatype=xsd:integer) ; ns1:c Literal(&quot;25.5&quot;, datatype=xsd:double) ; rdf:type mynamespace:aThing ]-&gt;ns1:b &lt;= Literal(&quot;25.5&quot;, datatype=xsd:double)
+  </div>
+                                                                    
+                                                                    <div class="font-monospace entry-message section-shacl ">Focus nodes for _sources/mySchema/shapes.shacl:
+ - Shape &lt;https://www.ogc.org/rules/template/#testValues&gt;: _:N75b06d8bf24342d28ea27460ed442ad9
+</div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="card mb-2 validation-item " id="item-iguide.bbr.mySchema-2">
+                                            <div class="card-body">
+                                                <div class="card-title mb-0 anchor-container">
+                                                    <button type="button" class="btn btn-sm btn-primary collapsed"
+                                                            data-bs-toggle="collapse" data-bs-target="#uid-7"
+                                                            aria-expanded="false" aria-controls="uid-7"
+                                                            style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;">
+                                                        <i class="bi bi-caret-right-fill caret"></i>
+                                                        Details
+                                                    </button>
+                                                    <a href="bbr/mySchema/example_1_1.json" target="_blank">example_1_1.json</a>
+                                                    <span class="badge bg-secondary example">Example</span>
+                                                    <a class="anchor" href="#item-iguide.bbr.mySchema-2">¶</a>
+                                                    <div class="float-end">
+                                                            <span class="badge text-bg-success me-2">Passed</span>
+                                                    </div>
+                                                </div>
+                                                <div class="card-text mt-2 validation-text collapse" id="uid-7">
+                                                    <div class="validation-text-inner">
+                                                                    <div class="font-monospace subsection-title mt-2">Files</div>
+                                                                
+                                                                    
+                                                                    <div class="font-monospace entry-message section-files ">Using example.json from examples</div>
+                                                                    
+                                                                    <div class="font-monospace entry-message section-files ">JSON-LD context is present - uplifting</div>
+                                                                    
+                                                                    <div class="font-monospace entry-message section-files ">Output JSON-LD example_1_1.jsonld created</div>
+                                                                    
+                                                                    <div class="font-monospace entry-message section-files ">Output Turtle example_1_1.ttl created</div>
+                                                                    <div class="font-monospace subsection-title mt-2">JSON Schema</div>
+                                                                
+                                                                    
+                                                                    <div class="font-monospace entry-message section-json_schema ">Validation passed</div>
+                                                                    <div class="font-monospace subsection-title mt-2">SHACL</div>
+                                                                
+                                                                    
+                                                                    <div class="font-monospace entry-message section-shacl ">Validation result for _sources/mySchema/shapes.shacl:
+  Validation Report
+  Conforms: True
+  </div>
+                                                                    
+                                                                    <div class="font-monospace entry-message section-shacl ">Focus nodes for _sources/mySchema/shapes.shacl:
+ - Shape &lt;https://www.ogc.org/rules/template/#testValues&gt;: *none*
+</div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item bblock-report" data-bblock-id="iguide.bbr.myFeature" id="bblock-iguide.bbr.myFeature">
+                            <h2 class="accordion-header bblock-title anchor-container">
+                                <button class="accordion-button collapsed" type="button"
+                                    data-bs-toggle="collapse"
+                                    data-bs-target="#bblock-collapse-iguide\.bbr\.myFeature">
+                                    <div class="flex-fill">
+                                        Custom Feature
+                                        <small class="ms-2 bblock-id">iguide.bbr.myFeature</small>
+                                        <a class="anchor" href="#bblock-iguide.bbr.myFeature">¶</a>
+                                    </div>
+
+                                    <span class="badge text-bg-success me-2">
+                                            Passed
+                                            (100% passed)
+                                    </span>
+                                </button>
+                            </h2>
+                            <div class="accordion-collapse collapse " id="bblock-collapse-iguide.bbr.myFeature">
+                                <div class="accordion-body">
+                                        <p class="summary fw-semibold text-success">
+                                            Test passed: 3 / 3
+                                        </p>
+                                        <div class="card mb-2 validation-item require-fail" id="item-iguide.bbr.myFeature-1">
+                                            <div class="card-body">
+                                                <div class="card-title mb-0 anchor-container">
+                                                    <button type="button" class="btn btn-sm btn-primary collapsed"
+                                                            data-bs-toggle="collapse" data-bs-target="#uid-8"
+                                                            aria-expanded="false" aria-controls="uid-8"
+                                                            style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;">
+                                                        <i class="bi bi-caret-right-fill caret"></i>
+                                                        Details
+                                                    </button>
+                                                    <a href="../../_sources/myFeature/tests/feature-fail.json" target="_blank">feature-fail.json</a>
+                                                    <span class="badge bg-secondary test_resource">Test resource</span>
+                                                        <span class="badge text-bg-info">Requires fail</span>
+                                                    <a class="anchor" href="#item-iguide.bbr.myFeature-1">¶</a>
+                                                    <div class="float-end">
+                                                            <span class="badge text-bg-success me-2">Passed</span>
+                                                    </div>
+                                                </div>
+                                                <div class="card-text mt-2 validation-text collapse" id="uid-8">
+                                                    <div class="validation-text-inner">
+                                                                    <div class="font-monospace subsection-title mt-2">General</div>
+                                                                
+                                                                    
+                                                                    <div class="font-monospace entry-message section-general ">Test was expected to fail and it did.</div>
+                                                                    <div class="font-monospace subsection-title mt-2">Files</div>
+                                                                
+                                                                    
+                                                                    <div class="font-monospace entry-message section-files ">Using feature-fail.json from test resources</div>
+                                                                    
+                                                                    <div class="font-monospace entry-message section-files ">JSON-LD context is present - uplifting</div>
+                                                                    
+                                                                    <div class="font-monospace entry-message section-files ">Output JSON-LD feature-fail.jsonld created</div>
+                                                                    
+                                                                    <div class="font-monospace entry-message section-files ">Output Turtle feature-fail.ttl created</div>
+                                                                    <div class="font-monospace subsection-title mt-2">JSON Schema</div>
+                                                                
+                                                                    
+                                                                    <div class="font-monospace entry-message section-json_schema text-danger">ValidationError: {&#x27;id&#x27;: &#x27;f1&#x27;, &#x27;type&#x27;: &#x27;Feature&#x27;, &#x27;geometry&#x27;: {&#x27;type&#x27;: &#x27;LineString&#x27;, &#x27;coordinates&#x27;: [[-111.67183507997295, 40.056709946862874], [-111.71, 40.156709946862875]]}, &#x27;properties&#x27;: {&#x27;notMyProp&#x27;: &#x27;Mandatory property not present example&#x27;}} is not valid under any of the given schemas
+
+Failed validating &#x27;anyOf&#x27; in schema:
+    {&#x27;$defs&#x27;: {&#x27;MyFeature&#x27;: {&#x27;allOf&#x27;: [{&#x27;$ref&#x27;: &#x27;https://opengeospatial.github.io/bblocks/annotated-schemas/geo/features/feature/schema.yaml&#x27;},
+                                       {&#x27;properties&#x27;: {&#x27;properties&#x27;: {&#x27;$ref&#x27;: &#x27;https://raw.githubusercontent.com/I-GUIDE/ogc-bblock-iguide/undefined/build/annotated/bbr/mySchema/schema.yaml&#x27;}}}]}},
+     &#x27;$schema&#x27;: &#x27;https://json-schema.org/draft/2020-12/schema&#x27;,
+     &#x27;anyOf&#x27;: [{&#x27;$ref&#x27;: &#x27;#/$defs/MyFeature&#x27;}],
+     &#x27;description&#x27;: &#x27;Example of a simple GeoJSON Feature specialisation&#x27;}
+
+On instance:
+    {&#x27;geometry&#x27;: {&#x27;coordinates&#x27;: [[-111.67183507997295, 40.056709946862874],
+                                  [-111.71, 40.156709946862875]],
+                  &#x27;type&#x27;: &#x27;LineString&#x27;},
+     &#x27;id&#x27;: &#x27;f1&#x27;,
+     &#x27;properties&#x27;: {&#x27;notMyProp&#x27;: &#x27;Mandatory property not present example&#x27;},
+     &#x27;type&#x27;: &#x27;Feature&#x27;}</div>
+                                                                    <div class="font-monospace subsection-title mt-2">SHACL</div>
+                                                                
+                                                                    
+                                                                    <div class="font-monospace entry-message section-shacl ">Validation result for _sources/mySchema/shapes.shacl:
+  Validation Report
+  Conforms: True
+  </div>
+                                                                    
+                                                                    <div class="font-monospace entry-message section-shacl ">Focus nodes for _sources/mySchema/shapes.shacl:
+ - Shape &lt;https://www.ogc.org/rules/template/#testValues&gt;: *none*
+</div>
+                                                                    
+                                                                    <div class="font-monospace entry-message section-shacl ">Validation result for https://opengeospatial.github.io/bblocks/registereditems/geo/features/feature/shapes.shacl:
+  Validation Report
+  Conforms: True
+  </div>
+                                                                    
+                                                                    <div class="font-monospace entry-message section-shacl ">Focus nodes for https://opengeospatial.github.io/bblocks/registereditems/geo/features/feature/shapes.shacl:
+ - Shape geojson:LinkShape: *none*
+ - Shape geojson:GeometryShape/sh:or/rdf:rest/rdf:first: *none*
+ - Shape geojson:GeometryShape/sh:or/rdf:first: *none*
+ - Shape geojson:GeometryShape: *none*
+ - Shape geojson:FeatureShape: &lt;file:///github/workspace/f1&gt;
+</div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="card mb-2 validation-item " id="item-iguide.bbr.myFeature-2">
+                                            <div class="card-body">
+                                                <div class="card-title mb-0 anchor-container">
+                                                    <button type="button" class="btn btn-sm btn-primary collapsed"
+                                                            data-bs-toggle="collapse" data-bs-target="#uid-9"
+                                                            aria-expanded="false" aria-controls="uid-9"
+                                                            style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;">
+                                                        <i class="bi bi-caret-right-fill caret"></i>
+                                                        Details
+                                                    </button>
+                                                    <a href="bbr/myFeature/example_1_1.json" target="_blank">example_1_1.json</a>
+                                                    <span class="badge bg-secondary example">Example</span>
+                                                    <a class="anchor" href="#item-iguide.bbr.myFeature-2">¶</a>
+                                                    <div class="float-end">
+                                                            <span class="badge text-bg-success me-2">Passed</span>
+                                                    </div>
+                                                </div>
+                                                <div class="card-text mt-2 validation-text collapse" id="uid-9">
+                                                    <div class="validation-text-inner">
+                                                                    <div class="font-monospace subsection-title mt-2">Files</div>
+                                                                
+                                                                    
+                                                                    <div class="font-monospace entry-message section-files ">Using examples/feature.json from examples</div>
+                                                                    
+                                                                    <div class="font-monospace entry-message section-files ">JSON-LD context is present - uplifting</div>
+                                                                    
+                                                                    <div class="font-monospace entry-message section-files ">Output JSON-LD example_1_1.jsonld created</div>
+                                                                    
+                                                                    <div class="font-monospace entry-message section-files ">Output Turtle example_1_1.ttl created</div>
+                                                                    <div class="font-monospace subsection-title mt-2">JSON Schema</div>
+                                                                
+                                                                    
+                                                                    <div class="font-monospace entry-message section-json_schema ">Validation passed</div>
+                                                                    <div class="font-monospace subsection-title mt-2">SHACL</div>
+                                                                
+                                                                    
+                                                                    <div class="font-monospace entry-message section-shacl ">Validation result for _sources/mySchema/shapes.shacl:
+  Validation Report
+  Conforms: True
+  </div>
+                                                                    
+                                                                    <div class="font-monospace entry-message section-shacl ">Focus nodes for _sources/mySchema/shapes.shacl:
+ - Shape &lt;https://www.ogc.org/rules/template/#testValues&gt;: &lt;http://example.com/features/f1&gt;
+</div>
+                                                                    
+                                                                    <div class="font-monospace entry-message section-shacl ">Validation result for https://opengeospatial.github.io/bblocks/registereditems/geo/features/feature/shapes.shacl:
+  Validation Report
+  Conforms: True
+  </div>
+                                                                    
+                                                                    <div class="font-monospace entry-message section-shacl ">Focus nodes for https://opengeospatial.github.io/bblocks/registereditems/geo/features/feature/shapes.shacl:
+ - Shape geojson:LinkShape: *none*
+ - Shape geojson:GeometryShape/sh:or/rdf:rest/rdf:first: *none*
+ - Shape geojson:GeometryShape/sh:or/rdf:first: *none*
+ - Shape geojson:GeometryShape: *none*
+ - Shape geojson:FeatureShape: &lt;http://example.com/features/f1&gt;
+</div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="card mb-2 validation-item " id="item-iguide.bbr.myFeature-3">
+                                            <div class="card-body">
+                                                <div class="card-title mb-0 anchor-container">
+                                                    <button type="button" class="btn btn-sm btn-primary collapsed"
+                                                            data-bs-toggle="collapse" data-bs-target="#uid-10"
+                                                            aria-expanded="false" aria-controls="uid-10"
+                                                            style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;">
+                                                        <i class="bi bi-caret-right-fill caret"></i>
+                                                        Details
+                                                    </button>
+                                                    <a href="bbr/myFeature/example_1_2.yaml" target="_blank">example_1_2.yaml</a>
+                                                    <span class="badge bg-secondary example">Example</span>
+                                                    <a class="anchor" href="#item-iguide.bbr.myFeature-3">¶</a>
+                                                    <div class="float-end">
+                                                            <span class="badge text-bg-success me-2">Passed</span>
+                                                    </div>
+                                                </div>
+                                                <div class="card-text mt-2 validation-text collapse" id="uid-10">
+                                                    <div class="validation-text-inner">
+                                                                    <div class="font-monospace subsection-title mt-2">Files</div>
+                                                                
+                                                                    
+                                                                    <div class="font-monospace entry-message section-files ">Using example_1_2.yaml from examples</div>
+                                                                    <div class="font-monospace subsection-title mt-2">JSON Schema</div>
+                                                                
+                                                                    
+                                                                    <div class="font-monospace entry-message section-json_schema ">Validation passed</div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                </div>
+                            </div>
+                        </div>
+                </div>
+        </div>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+        <script type="text/javascript">
+            window.addEventListener('load', () => {
+                const accordionEntries = [...document.querySelectorAll('#bblock-reports .accordion-collapse')];
+                document.querySelector('#expand-collapse').addEventListener('click', ev => {
+                    ev.preventDefault();
+                    if (ev.target.matches('.expand-all')) {
+                        accordionEntries.forEach(e => e.classList.add('show'));
+                    } else if (ev.target.matches('.collapse-all')) {
+                        accordionEntries.forEach(e => e.classList.remove('show'));
+                    }
+                });
+                if (/^#(bblock|item)-/.test(location.hash)) {
+                    const highlight = document.querySelector(location.hash.replaceAll('.', '\\.'));
+                    if (highlight) {
+                        highlight.querySelector('.accordion-collapse').classList.add('show');
+                        highlight.classList.add('highlighted');
+                    }
+                }
+                document.addEventListener('click', ev => {
+                    if (!ev.target.classList.contains('anchor') || !ev.target.href) {
+                      return;
+                    }
+                    ev.stopPropagation();
+                    navigator?.clipboard?.writeText(ev.target.href);
+                });
+            });
+        </script>
+    </body>
+</html>

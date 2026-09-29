@@ -1,0 +1,210 @@
+@prefix bblocks: <https://www.opengis.net/def/bblocks/> .
+@prefix dcat: <http://www.w3.org/ns/dcat#> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix ns1: <http://www.w3.org/ns/oa#> .
+@prefix ns2: <http://www.iana.org/assignments/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix prof: <http://www.w3.org/ns/dx/prof/> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix role: <http://www.w3.org/ns/dx/prof/role/> .
+@prefix schema: <https://schema.org/> .
+@prefix shacl: <https://www.w3.org/TR/shacl/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<bblocks://iguide.bbr.myFeature> a skos:Concept,
+        dcat:Dataset,
+        bblocks:BBlock,
+        bblocks:Schema ;
+    rdfs:label "Custom Feature" ;
+    dct:abstract "This examples shows a simple customisation for OGC API Feature schemas"^^<https://www.w3.org/ns/iana/media-types/text/markdown> ;
+    dct:created "2023-05-19T00:00:00+00:00"^^xsd:dateTime ;
+    dct:description [ dct:format "application/json" ;
+            rdfs:isDefinedBy <https://raw.githubusercontent.com/I-GUIDE/ogc-bblock-iguide/undefined/build/generateddocs/json-full/bbr/myFeature/index.json> ],
+        [ dct:format "text/html" ;
+            rdfs:isDefinedBy <https://raw.githubusercontent.com/I-GUIDE/ogc-bblock-iguide/undefined/bblock/iguide.bbr.myFeature> ],
+        [ dct:format "text/markdown" ;
+            rdfs:isDefinedBy <https://raw.githubusercontent.com/I-GUIDE/ogc-bblock-iguide/undefined/build/generateddocs/markdown/bbr/myFeature/index.md> ] ;
+    dct:hasVersion "1.0" ;
+    dct:modified "2023-05-19"^^xsd:date ;
+    dct:source <https://docs.ogc.org/is/17-069r3/17-069r3.html#_response_7> ;
+    skos:inScheme <https://raw.githubusercontent.com/I-GUIDE/ogc-bblock-iguide/undefined/> ;
+    skos:prefLabel "Custom Feature" ;
+    skos:topConceptOf <https://raw.githubusercontent.com/I-GUIDE/ogc-bblock-iguide/undefined/> ;
+    dcat:keyword "examples",
+        "feature" ;
+    prof:hasResource [ dct:conformsTo <https://www.w3.org/TR/json-ld11/> ;
+            dct:format "application/ld+json" ;
+            prof:hasArtifact <https://raw.githubusercontent.com/I-GUIDE/ogc-bblock-iguide/undefined/build/annotated/bbr/myFeature/context.jsonld> ;
+            prof:hasRole role:mapping ],
+        [ dct:conformsTo shacl: ;
+            dct:format "text/turtle" ;
+            rdfs:seeAlso <bblocks://ogc.geo.features.feature> ;
+            prof:hasArtifact <https://opengeospatial.github.io/bblocks/registereditems/geo/features/feature/shapes.shacl> ;
+            prof:hasRole role:validation ],
+        [ dct:conformsTo <https://json-schema.org/draft/2020-12/schema> ;
+            dct:format "application/json" ;
+            prof:hasArtifact <https://raw.githubusercontent.com/I-GUIDE/ogc-bblock-iguide/undefined/build/annotated/bbr/myFeature/schema.json> ;
+            prof:hasRole role:schema ],
+        [ dct:conformsTo shacl: ;
+            dct:format "text/turtle" ;
+            rdfs:seeAlso <bblocks://iguide.bbr.mySchema> ;
+            prof:hasArtifact <https://raw.githubusercontent.com/I-GUIDE/ogc-bblock-iguide/undefined/_sources/mySchema/shapes.shacl> ;
+            prof:hasRole role:validation ],
+        [ dct:conformsTo <https://json-schema.org/draft/2020-12/schema> ;
+            dct:format "application/yaml" ;
+            prof:hasArtifact <https://raw.githubusercontent.com/I-GUIDE/ogc-bblock-iguide/undefined/build/annotated/bbr/myFeature/schema.yaml> ;
+            prof:hasRole role:schema ] ;
+    bblocks:dependsOn <bblocks://iguide.bbr.mySchema>,
+        <bblocks://ogc.geo.features.feature> ;
+    bblocks:status <http://www.opengis.net/def/status/under-development> ;
+    bblocks:validationPassed true .
+
+<https://data.cityofchicago.org/Public-Safety/Crimes-2001-to-Present/ijzp-q8t2> rdfs:label "Chicago Data Portal - Crimes - 2001 to Present" .
+
+<https://docs.ogc.org/is/17-069r3/17-069r3.html#_response_7> rdfs:label "OGC API - Features, Part 1, 7.16.2: Feature Response" .
+
+<https://example.com/sources/1> rdfs:label "Sample source document" .
+
+<https://platform.i-guide.io/datasets/265e6957-7ecf-48e0-a179-b498533eb627> rdfs:label "I-GUIDE Platform - Chicago Crime data 2026" .
+
+<https://raw.githubusercontent.com/I-GUIDE/ogc-bblock-iguide/undefined/build/bblocks.ttl> a prov:Entity ;
+    dct:format "text/turtle" ;
+    prov:wasAttributedTo _:Nbc5650481a7844a19e68c3348126d810 ;
+    prov:wasGeneratedBy [ a prov:Activity ;
+            prov:endedAtTime "2026-09-29T19:17:09.528649"^^xsd:dateTime ;
+            prov:startedAtTime "2026-09-29T19:17:09.429447"^^xsd:dateTime ;
+            prov:used [ a prov:Entity ;
+                    dct:format "application/json" ;
+                    dct:hasVersion "git:36f23b5e1b4d2e016e61364eebcdacd01de2303a" ;
+                    rdfs:seeAlso <https://raw.githubusercontent.com/I-GUIDE/ogc-bblock-iguide/undefined/build/register.json> ],
+                [ a prov:Entity ;
+                    dct:format "application/yaml" ;
+                    rdfs:seeAlso <file:///src/ogc/bblocks/register-context.yaml> ] ;
+            prov:wasAssociatedWith _:Nbc5650481a7844a19e68c3348126d810 ] .
+
+<bblocks://iguide.bbr.chicagoCrime> a skos:Concept,
+        dcat:Dataset,
+        bblocks:BBlock,
+        bblocks:Schema ;
+    rdfs:label "Chicago Crime Record" ;
+    dct:abstract "Schema and semantic annotation for a single reported crime incident from the City of Chicago 'Crimes - 2001 to Present' dataset, as published on the I-GUIDE Platform (Chicago Crime data 2026)."^^<https://www.w3.org/ns/iana/media-types/text/markdown> ;
+    dct:created "2026-09-29T00:00:00+00:00"^^xsd:dateTime ;
+    dct:description [ dct:format "application/json" ;
+            rdfs:isDefinedBy <https://raw.githubusercontent.com/I-GUIDE/ogc-bblock-iguide/undefined/build/generateddocs/json-full/bbr/chicagoCrime/index.json> ],
+        [ dct:format "text/markdown" ;
+            rdfs:isDefinedBy <https://raw.githubusercontent.com/I-GUIDE/ogc-bblock-iguide/undefined/build/generateddocs/markdown/bbr/chicagoCrime/index.md> ],
+        [ dct:format "text/html" ;
+            rdfs:isDefinedBy <https://raw.githubusercontent.com/I-GUIDE/ogc-bblock-iguide/undefined/bblock/iguide.bbr.chicagoCrime> ] ;
+    dct:hasVersion "0.1" ;
+    dct:modified "2026-09-29"^^xsd:date ;
+    dct:source <https://data.cityofchicago.org/Public-Safety/Crimes-2001-to-Present/ijzp-q8t2>,
+        <https://platform.i-guide.io/datasets/265e6957-7ecf-48e0-a179-b498533eb627> ;
+    skos:inScheme <https://raw.githubusercontent.com/I-GUIDE/ogc-bblock-iguide/undefined/> ;
+    skos:prefLabel "Chicago Crime Record" ;
+    skos:topConceptOf <https://raw.githubusercontent.com/I-GUIDE/ogc-bblock-iguide/undefined/> ;
+    dcat:keyword "chicago",
+        "crime",
+        "dataset",
+        "i-guide",
+        "public-safety" ;
+    prof:hasResource [ dct:conformsTo <https://json-schema.org/draft/2020-12/schema> ;
+            dct:format "application/yaml" ;
+            prof:hasArtifact <https://raw.githubusercontent.com/I-GUIDE/ogc-bblock-iguide/undefined/build/annotated/bbr/chicagoCrime/schema.yaml> ;
+            prof:hasRole role:schema ],
+        [ dct:conformsTo shacl: ;
+            dct:format "text/turtle" ;
+            rdfs:seeAlso <bblocks://iguide.bbr.chicagoCrime> ;
+            prof:hasArtifact <https://raw.githubusercontent.com/I-GUIDE/ogc-bblock-iguide/undefined/_sources/chicagoCrime/rules.shacl> ;
+            prof:hasRole role:validation ],
+        [ dct:conformsTo <https://json-schema.org/draft/2020-12/schema> ;
+            dct:format "application/json" ;
+            prof:hasArtifact <https://raw.githubusercontent.com/I-GUIDE/ogc-bblock-iguide/undefined/build/annotated/bbr/chicagoCrime/schema.json> ;
+            prof:hasRole role:schema ],
+        [ dct:conformsTo <https://www.w3.org/TR/json-ld11/> ;
+            dct:format "application/ld+json" ;
+            prof:hasArtifact <https://raw.githubusercontent.com/I-GUIDE/ogc-bblock-iguide/undefined/build/annotated/bbr/chicagoCrime/context.jsonld> ;
+            prof:hasRole role:mapping ] ;
+    bblocks:hasSourceJsonLdContext <https://raw.githubusercontent.com/I-GUIDE/ogc-bblock-iguide/undefined/_sources/chicagoCrime/context.jsonld> ;
+    bblocks:status <http://www.opengis.net/def/status/under-development> ;
+    bblocks:validationPassed true .
+
+<bblocks://iguide.bbr.mySchema> a skos:Concept,
+        dcat:Dataset,
+        bblocks:BBlock,
+        bblocks:Schema ;
+    rdfs:label "My Schema" ;
+    dct:abstract "An example schema defining the set of properties of any type of object."^^<https://www.w3.org/ns/iana/media-types/text/markdown> ;
+    dct:created "2023-04-05T00:00:00+00:00"^^xsd:dateTime ;
+    dct:description [ dct:format "text/html" ;
+            rdfs:isDefinedBy <https://raw.githubusercontent.com/I-GUIDE/ogc-bblock-iguide/undefined/bblock/iguide.bbr.mySchema> ],
+        [ dct:format "text/markdown" ;
+            rdfs:isDefinedBy <https://raw.githubusercontent.com/I-GUIDE/ogc-bblock-iguide/undefined/build/generateddocs/markdown/bbr/mySchema/index.md> ],
+        [ dct:format "application/json" ;
+            rdfs:isDefinedBy <https://raw.githubusercontent.com/I-GUIDE/ogc-bblock-iguide/undefined/build/generateddocs/json-full/bbr/mySchema/index.json> ] ;
+    dct:hasVersion "0.1" ;
+    dct:modified "2023-04-05"^^xsd:date ;
+    dct:source <https://example.com/sources/1> ;
+    skos:inScheme <https://raw.githubusercontent.com/I-GUIDE/ogc-bblock-iguide/undefined/> ;
+    skos:prefLabel "My Schema" ;
+    skos:topConceptOf <https://raw.githubusercontent.com/I-GUIDE/ogc-bblock-iguide/undefined/> ;
+    dcat:keyword "templates" ;
+    prof:hasResource [ dct:conformsTo shacl: ;
+            dct:format "text/turtle" ;
+            rdfs:seeAlso <bblocks://iguide.bbr.mySchema> ;
+            prof:hasArtifact <https://raw.githubusercontent.com/I-GUIDE/ogc-bblock-iguide/undefined/_sources/mySchema/shapes.shacl> ;
+            prof:hasRole role:validation ],
+        [ dct:conformsTo <https://json-schema.org/draft/2020-12/schema> ;
+            dct:format "application/json" ;
+            prof:hasArtifact <https://raw.githubusercontent.com/I-GUIDE/ogc-bblock-iguide/undefined/build/annotated/bbr/mySchema/schema.json> ;
+            prof:hasRole role:schema ],
+        [ dct:conformsTo <https://www.w3.org/TR/json-ld11/> ;
+            dct:format "application/ld+json" ;
+            prof:hasArtifact <https://raw.githubusercontent.com/I-GUIDE/ogc-bblock-iguide/undefined/build/annotated/bbr/mySchema/context.jsonld> ;
+            prof:hasRole role:mapping ],
+        [ dct:conformsTo <https://json-schema.org/draft/2020-12/schema> ;
+            dct:format "application/yaml" ;
+            prof:hasArtifact <https://raw.githubusercontent.com/I-GUIDE/ogc-bblock-iguide/undefined/build/annotated/bbr/mySchema/schema.yaml> ;
+            prof:hasRole role:schema ] ;
+    bblocks:hasSourceJsonLdContext <https://raw.githubusercontent.com/I-GUIDE/ogc-bblock-iguide/undefined/_sources/mySchema/context.jsonld> ;
+    bblocks:status <http://www.opengis.net/def/status/under-development> ;
+    bblocks:validationPassed true .
+
+<https://raw.githubusercontent.com/I-GUIDE/ogc-bblock-iguide/undefined/> a skos:ConceptScheme,
+        dcat:Catalog,
+        bblocks:BBlocksRegister ;
+    rdfs:label "Building Blocks - I-GUIDE Building Blocks" ;
+    dct:abstract """OGC Building Blocks describing datasets published on the [I-GUIDE Platform](https://platform.i-guide.io/).
+"""^^<https://www.w3.org/ns/iana/media-types/text/markdown> ;
+    dct:description """Schemas, JSON-LD semantic annotations and SHACL rules for datasets hosted on the I-GUIDE Platform,
+so that their records can be validated and published as linked data.
+"""^^<https://www.w3.org/ns/iana/media-types/text/markdown> ;
+    dct:modified "2026-09-29T19:17:07.585840"^^xsd:dateTime ;
+    owl:imports <https://opengeospatial.github.io/bblocks/register.json> ;
+    skos:hasTopConcept <bblocks://iguide.bbr.chicagoCrime>,
+        <bblocks://iguide.bbr.myFeature>,
+        <bblocks://iguide.bbr.mySchema> ;
+    skos:prefLabel "Building Blocks - I-GUIDE Building Blocks" ;
+    prof:hasResource [ rdfs:label "This Building Blocks Register in JSON format" ;
+            dct:type "application/json" ;
+            ns2:relation <http://www.iana.org/assignments/relation/self> ;
+            ns1:hasTarget <https://raw.githubusercontent.com/I-GUIDE/ogc-bblock-iguide/undefined/build/register.json> ],
+        [ rdfs:label "This Building Blocks Register in RDF Turtle format" ;
+            dct:type "text/turtle" ;
+            ns2:relation <http://www.iana.org/assignments/relation/self> ;
+            ns1:hasTarget <https://raw.githubusercontent.com/I-GUIDE/ogc-bblock-iguide/undefined/build/bblocks.ttl> ],
+        [ rdfs:label "This Building Blocks Register in JSON-LD format" ;
+            dct:type "application/ld+json" ;
+            ns2:relation <http://www.iana.org/assignments/relation/self> ;
+            ns1:hasTarget <https://raw.githubusercontent.com/I-GUIDE/ogc-bblock-iguide/undefined/build/bblocks.jsonld> ] ;
+    foaf:homepage <https://raw.githubusercontent.com/I-GUIDE/ogc-bblock-iguide/undefined/> ;
+    bblocks:hasValidationReport <https://raw.githubusercontent.com/I-GUIDE/ogc-bblock-iguide/undefined/build/tests/report.html> .
+
+_:Nbc5650481a7844a19e68c3348126d810 a prov:Agent,
+        schema:SoftwareApplication ;
+    rdfs:label "OGC-NA tools" ;
+    dct:hasVersion "0.5.35.dev2+g67607e7aa" ;
+    rdfs:seeAlso <https://github.com/opengeospatial/ogc-na-tools> .
+

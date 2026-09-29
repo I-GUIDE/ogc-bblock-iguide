@@ -1,0 +1,25 @@
+path	@id	schema
+/id	http://purl.org/dc/terms/identifier	/github/workspace/build/annotated/bbr/chicagoCrime/schema.yaml
+/case_number	https://platform.i-guide.io/def/chicago-crime/caseNumber	/github/workspace/build/annotated/bbr/chicagoCrime/schema.yaml
+/date	https://platform.i-guide.io/def/chicago-crime/date	/github/workspace/build/annotated/bbr/chicagoCrime/schema.yaml
+/block	https://platform.i-guide.io/def/chicago-crime/block	/github/workspace/build/annotated/bbr/chicagoCrime/schema.yaml
+/iucr	https://platform.i-guide.io/def/chicago-crime/iucr	/github/workspace/build/annotated/bbr/chicagoCrime/schema.yaml
+/primary_type	https://platform.i-guide.io/def/chicago-crime/primaryType	/github/workspace/build/annotated/bbr/chicagoCrime/schema.yaml
+/description	https://platform.i-guide.io/def/chicago-crime/description	/github/workspace/build/annotated/bbr/chicagoCrime/schema.yaml
+/location_description	https://platform.i-guide.io/def/chicago-crime/locationDescription	/github/workspace/build/annotated/bbr/chicagoCrime/schema.yaml
+/arrest	https://platform.i-guide.io/def/chicago-crime/arrest	/github/workspace/build/annotated/bbr/chicagoCrime/schema.yaml
+/domestic	https://platform.i-guide.io/def/chicago-crime/domestic	/github/workspace/build/annotated/bbr/chicagoCrime/schema.yaml
+/beat	https://platform.i-guide.io/def/chicago-crime/beat	/github/workspace/build/annotated/bbr/chicagoCrime/schema.yaml
+/district	https://platform.i-guide.io/def/chicago-crime/district	/github/workspace/build/annotated/bbr/chicagoCrime/schema.yaml
+/ward	https://platform.i-guide.io/def/chicago-crime/ward	/github/workspace/build/annotated/bbr/chicagoCrime/schema.yaml
+/community_area	https://platform.i-guide.io/def/chicago-crime/communityArea	/github/workspace/build/annotated/bbr/chicagoCrime/schema.yaml
+/fbi_code	https://platform.i-guide.io/def/chicago-crime/fbiCode	/github/workspace/build/annotated/bbr/chicagoCrime/schema.yaml
+/x_coordinate	https://platform.i-guide.io/def/chicago-crime/xCoordinate	/github/workspace/build/annotated/bbr/chicagoCrime/schema.yaml
+/y_coordinate	https://platform.i-guide.io/def/chicago-crime/yCoordinate	/github/workspace/build/annotated/bbr/chicagoCrime/schema.yaml
+/year	https://platform.i-guide.io/def/chicago-crime/year	/github/workspace/build/annotated/bbr/chicagoCrime/schema.yaml
+/updated_on	http://purl.org/dc/terms/modified	/github/workspace/build/annotated/bbr/chicagoCrime/schema.yaml
+/latitude	http://www.w3.org/2003/01/geo/wgs84_pos#lat	/github/workspace/build/annotated/bbr/chicagoCrime/schema.yaml
+/longitude	http://www.w3.org/2003/01/geo/wgs84_pos#long	/github/workspace/build/annotated/bbr/chicagoCrime/schema.yaml
+/location	http://www.opengis.net/ont/geosparql#hasGeometry	/github/workspace/build/annotated/bbr/chicagoCrime/schema.yaml
+/location/_oneOf/0/type		/github/workspace/build/annotated/bbr/chicagoCrime/schema.yaml
+/location/_oneOf/0/coordinates		/github/workspace/build/annotated/bbr/chicagoCrime/schema.yaml

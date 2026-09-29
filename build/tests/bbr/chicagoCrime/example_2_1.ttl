@@ -1,0 +1,25 @@
+@prefix ccr: <https://platform.i-guide.io/def/chicago-crime/> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix geo: <http://www.opengis.net/ont/geosparql#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+[] dcterms:identifier "14281178" ;
+    dcterms:modified "2026-08-02T15:44:42"^^xsd:dateTime ;
+    geo:hasGeometry "null"^^rdf:JSON ;
+    ccr:arrest false ;
+    ccr:beat "1614" ;
+    ccr:block "054XX N EAST RIVER RD" ;
+    ccr:caseNumber "JK355713" ;
+    ccr:communityArea 76 ;
+    ccr:date "2026-07-26T00:00:00"^^xsd:dateTime ;
+    ccr:description "DOMESTIC BATTERY SIMPLE" ;
+    ccr:district "016" ;
+    ccr:domestic true ;
+    ccr:fbiCode "08B" ;
+    ccr:iucr "0486" ;
+    ccr:locationDescription "APARTMENT" ;
+    ccr:primaryType "BATTERY" ;
+    ccr:ward 41 ;
+    ccr:year "2026"^^xsd:gYear .
+

@@ -1,0 +1,33 @@
+{
+  "@context": [
+    {
+      "ccr": "https://platform.i-guide.io/def/chicago-crime/",
+      "dct": "http://purl.org/dc/terms/",
+      "geo": "http://www.opengis.net/ont/geosparql#",
+      "wgs84": "http://www.w3.org/2003/01/geo/wgs84_pos#"
+    },
+    "https://raw.githubusercontent.com/I-GUIDE/ogc-bblock-iguide/undefined/build/annotated/bbr/chicagoCrime/context.jsonld"
+  ],
+  "id": "14281178",
+  "case_number": "JK355713",
+  "date": "2026-07-26T00:00:00",
+  "block": "054XX N EAST RIVER RD",
+  "iucr": "0486",
+  "primary_type": "BATTERY",
+  "description": "DOMESTIC BATTERY SIMPLE",
+  "location_description": "APARTMENT",
+  "arrest": false,
+  "domestic": true,
+  "beat": "1614",
+  "district": "016",
+  "ward": 41,
+  "community_area": 76,
+  "fbi_code": "08B",
+  "x_coordinate": null,
+  "y_coordinate": null,
+  "year": 2026,
+  "updated_on": "2026-08-02T15:44:42",
+  "latitude": null,
+  "longitude": null,
+  "location": null
+}

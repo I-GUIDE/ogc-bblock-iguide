@@ -1,0 +1,68 @@
+{
+  "@context": {
+    "id": "dct:identifier",
+    "case_number": "ccr:caseNumber",
+    "date": {
+      "@id": "ccr:date",
+      "@type": "xsd:dateTime"
+    },
+    "block": "ccr:block",
+    "iucr": "ccr:iucr",
+    "primary_type": "ccr:primaryType",
+    "description": "ccr:description",
+    "location_description": "ccr:locationDescription",
+    "arrest": {
+      "@id": "ccr:arrest",
+      "@type": "xsd:boolean"
+    },
+    "domestic": {
+      "@id": "ccr:domestic",
+      "@type": "xsd:boolean"
+    },
+    "beat": "ccr:beat",
+    "district": "ccr:district",
+    "ward": {
+      "@id": "ccr:ward",
+      "@type": "xsd:integer"
+    },
+    "community_area": {
+      "@id": "ccr:communityArea",
+      "@type": "xsd:integer"
+    },
+    "fbi_code": "ccr:fbiCode",
+    "x_coordinate": {
+      "@id": "ccr:xCoordinate",
+      "@type": "xsd:decimal"
+    },
+    "y_coordinate": {
+      "@id": "ccr:yCoordinate",
+      "@type": "xsd:decimal"
+    },
+    "year": {
+      "@id": "ccr:year",
+      "@type": "xsd:gYear"
+    },
+    "updated_on": {
+      "@id": "dct:modified",
+      "@type": "xsd:dateTime"
+    },
+    "latitude": {
+      "@id": "wgs84:lat",
+      "@type": "xsd:decimal"
+    },
+    "longitude": {
+      "@id": "wgs84:long",
+      "@type": "xsd:decimal"
+    },
+    "location": {
+      "@id": "geo:hasGeometry",
+      "@type": "@json"
+    },
+    "dct": "http://purl.org/dc/terms/",
+    "ccr": "https://platform.i-guide.io/def/chicago-crime/",
+    "xsd": "http://www.w3.org/2001/XMLSchema#",
+    "wgs84": "http://www.w3.org/2003/01/geo/wgs84_pos#",
+    "geo": "http://www.opengis.net/ont/geosparql#",
+    "@version": 1.1
+  }
+}

@@ -1,0 +1,431 @@
+{
+  "title": "Validation report for iguide.bbr.chicagoCrime - Chicago Crime Record",
+  "bblockName": "Chicago Crime Record",
+  "bblockId": "iguide.bbr.chicagoCrime",
+  "generated": "2026-09-29T19:17:09.150654+00:00",
+  "result": true,
+  "items": [
+    {
+      "source": {
+        "type": "TEST_RESOURCE",
+        "requireFail": true,
+        "filename": "_sources/chicagoCrime/tests/record-outside-chicago-fail.json",
+        "url": "https://raw.githubusercontent.com/I-GUIDE/ogc-bblock-iguide/undefined/_sources/chicagoCrime/tests/record-outside-chicago-fail.json",
+        "language": "json"
+      },
+      "result": true,
+      "sections": [
+        {
+          "name": "GENERAL",
+          "title": "General",
+          "entries": [
+            {
+              "op": "require-fail",
+              "isError": false,
+              "message": "Test was expected to fail and it did."
+            }
+          ]
+        },
+        {
+          "name": "FILES",
+          "title": "Files",
+          "entries": [
+            {
+              "isError": false,
+              "message": "Using record-outside-chicago-fail.json from test resources"
+            },
+            {
+              "op": "jsonld-uplift",
+              "isError": false,
+              "message": "JSON-LD context is present - uplifting"
+            },
+            {
+              "op": "jsonld-create",
+              "filename": "record-outside-chicago-fail.jsonld",
+              "isError": false,
+              "message": "Output JSON-LD record-outside-chicago-fail.jsonld created"
+            },
+            {
+              "op": "ttl-create",
+              "empty": false,
+              "filename": "record-outside-chicago-fail.ttl",
+              "size": 22,
+              "isError": false,
+              "message": "Output Turtle record-outside-chicago-fail.ttl created"
+            }
+          ]
+        },
+        {
+          "name": "JSON_SCHEMA",
+          "title": "JSON Schema",
+          "entries": [
+            {
+              "op": "validation",
+              "result": true,
+              "isError": false,
+              "message": "Validation passed"
+            }
+          ]
+        },
+        {
+          "name": "SHACL",
+          "title": "SHACL",
+          "entries": [
+            {
+              "op": "shacl-report",
+              "shaclFile": "_sources/chicagoCrime/rules.shacl",
+              "graph": "@prefix ccr: <https://platform.i-guide.io/def/chicago-crime/> .\n@prefix dct: <http://purl.org/dc/terms/> .\n@prefix geo: <http://www.opengis.net/ont/geosparql#> .\n@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .\n@prefix sh: <http://www.w3.org/ns/shacl#> .\n@prefix wgs84: <http://www.w3.org/2003/01/geo/wgs84_pos#> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\n[] a sh:ValidationReport ;\n    sh:conforms false ;\n    sh:result [ a sh:ValidationResult ;\n            sh:focusNode _:N17e09a7ae4b4400994d91e17ef484b83 ;\n            sh:resultMessage \"Latitude must fall within the City of Chicago bounding box (41.6 to 42.1)\" ;\n            sh:resultPath wgs84:lat ;\n            sh:resultSeverity sh:Violation ;\n            sh:sourceConstraintComponent sh:MinInclusiveConstraintComponent ;\n            sh:sourceShape [ sh:maxCount 1 ;\n                    sh:maxInclusive 42.1 ;\n                    sh:message \"Latitude must fall within the City of Chicago bounding box (41.6 to 42.1)\" ;\n                    sh:minInclusive 41.6 ;\n                    sh:path wgs84:lat ] ;\n            sh:value 40.71 ],\n        [ a sh:ValidationResult ;\n            sh:focusNode _:N17e09a7ae4b4400994d91e17ef484b83 ;\n            sh:resultMessage \"Longitude must fall within the City of Chicago bounding box (-88.0 to -87.5)\" ;\n            sh:resultPath wgs84:long ;\n            sh:resultSeverity sh:Violation ;\n            sh:sourceConstraintComponent sh:MaxInclusiveConstraintComponent ;\n            sh:sourceShape [ sh:maxCount 1 ;\n                    sh:maxInclusive -87.5 ;\n                    sh:message \"Longitude must fall within the City of Chicago bounding box (-88.0 to -87.5)\" ;\n                    sh:minInclusive -88.0 ;\n                    sh:path wgs84:long ] ;\n            sh:value -74.0 ] .\n\n_:N17e09a7ae4b4400994d91e17ef484b83 dct:identifier \"14276240\" ;\n    dct:modified \"2026-08-02T15:44:42\"^^xsd:dateTime ;\n    geo:hasGeometry \"{\\\"coordinates\\\":[-74.0,40.71],\\\"type\\\":\\\"Point\\\"}\"^^rdf:JSON ;\n    wgs84:lat 40.71 ;\n    wgs84:long -74.0 ;\n    ccr:arrest false ;\n    ccr:beat \"0724\" ;\n    ccr:block \"012XX W MARQUETTE RD\" ;\n    ccr:caseNumber \"JK350788\" ;\n    ccr:communityArea 67 ;\n    ccr:date \"2026-07-26T00:00:00\"^^xsd:dateTime ;\n    ccr:description \"TO PROPERTY\" ;\n    ccr:district \"007\" ;\n    ccr:domestic false ;\n    ccr:fbiCode \"14\" ;\n    ccr:iucr \"1310\" ;\n    ccr:locationDescription \"APARTMENT\" ;\n    ccr:primaryType \"CRIMINAL DAMAGE\" ;\n    ccr:ward 17 ;\n    ccr:xCoordinate 1169332.0 ;\n    ccr:yCoordinate 1860356.0 ;\n    ccr:year \"2026\"^^xsd:gYear .\n\n",
+              "isError": true,
+              "message": "Validation result for _sources/chicagoCrime/rules.shacl:\n  Validation Report\n  Conforms: False\n  Results (2):\n  Constraint Violation in MinInclusiveConstraintComponent (http://www.w3.org/ns/shacl#MinInclusiveConstraintComponent):\n  \tSeverity: sh:Violation\n  \tSource Shape: [ sh:maxCount Literal(\"1\", datatype=xsd:integer) ; sh:maxInclusive Literal(\"42.1\", datatype=xsd:decimal) ; sh:message Literal(\"Latitude must fall within the City of Chicago bounding box (41.6 to 42.1)\") ; sh:minInclusive Literal(\"41.6\", datatype=xsd:decimal) ; sh:path wgs84:lat ]\n  \tFocus Node: [ ccr:arrest Literal(\"false\" = False, datatype=xsd:boolean) ; ccr:beat Literal(\"0724\") ; ccr:block Literal(\"012XX W MARQUETTE RD\") ; ccr:caseNumber Literal(\"JK350788\") ; ccr:communityArea Literal(\"67\", datatype=xsd:integer) ; ccr:date Literal(\"2026-07-26T00:00:00\" = 2026-07-26 00:00:00, datatype=xsd:dateTime) ; ccr:description Literal(\"TO PROPERTY\") ; ccr:district Literal(\"007\") ; ccr:domestic Literal(\"false\" = False, datatype=xsd:boolean) ; ccr:fbiCode Literal(\"14\") ; ccr:iucr Literal(\"1310\") ; ccr:locationDescription Literal(\"APARTMENT\") ; ccr:primaryType Literal(\"CRIMINAL DAMAGE\") ; ccr:ward Literal(\"17\", datatype=xsd:integer) ; ccr:xCoordinate Literal(\"1169332\", datatype=xsd:decimal) ; ccr:yCoordinate Literal(\"1860356\", datatype=xsd:decimal) ; ccr:year Literal(\"2026\", datatype=xsd:gYear) ; dct:identifier Literal(\"14276240\") ; dct:modified Literal(\"2026-08-02T15:44:42\" = 2026-08-02 15:44:42, datatype=xsd:dateTime) ; geo:hasGeometry Literal(\"{\"coordinates\":[-74.0,40.71],\"type\":\"Point\"}\" = None, datatype=rdf:JSON) ; wgs84:lat Literal(\"40.71\", datatype=xsd:decimal) ; wgs84:long Literal(\"-74.0\", datatype=xsd:decimal) ]\n  \tValue Node: Literal(\"40.71\", datatype=xsd:decimal)\n  \tResult Path: wgs84:lat\n  \tMessage: Latitude must fall within the City of Chicago bounding box (41.6 to 42.1)\n  Constraint Violation in MaxInclusiveConstraintComponent (http://www.w3.org/ns/shacl#MaxInclusiveConstraintComponent):\n  \tSeverity: sh:Violation\n  \tSource Shape: [ sh:maxCount Literal(\"1\", datatype=xsd:integer) ; sh:maxInclusive Literal(\"-87.5\", datatype=xsd:decimal) ; sh:message Literal(\"Longitude must fall within the City of Chicago bounding box (-88.0 to -87.5)\") ; sh:minInclusive Literal(\"-88.0\", datatype=xsd:decimal) ; sh:path wgs84:long ]\n  \tFocus Node: [ ccr:arrest Literal(\"false\" = False, datatype=xsd:boolean) ; ccr:beat Literal(\"0724\") ; ccr:block Literal(\"012XX W MARQUETTE RD\") ; ccr:caseNumber Literal(\"JK350788\") ; ccr:communityArea Literal(\"67\", datatype=xsd:integer) ; ccr:date Literal(\"2026-07-26T00:00:00\" = 2026-07-26 00:00:00, datatype=xsd:dateTime) ; ccr:description Literal(\"TO PROPERTY\") ; ccr:district Literal(\"007\") ; ccr:domestic Literal(\"false\" = False, datatype=xsd:boolean) ; ccr:fbiCode Literal(\"14\") ; ccr:iucr Literal(\"1310\") ; ccr:locationDescription Literal(\"APARTMENT\") ; ccr:primaryType Literal(\"CRIMINAL DAMAGE\") ; ccr:ward Literal(\"17\", datatype=xsd:integer) ; ccr:xCoordinate Literal(\"1169332\", datatype=xsd:decimal) ; ccr:yCoordinate Literal(\"1860356\", datatype=xsd:decimal) ; ccr:year Literal(\"2026\", datatype=xsd:gYear) ; dct:identifier Literal(\"14276240\") ; dct:modified Literal(\"2026-08-02T15:44:42\" = 2026-08-02 15:44:42, datatype=xsd:dateTime) ; geo:hasGeometry Literal(\"{\"coordinates\":[-74.0,40.71],\"type\":\"Point\"}\" = None, datatype=rdf:JSON) ; wgs84:lat Literal(\"40.71\", datatype=xsd:decimal) ; wgs84:long Literal(\"-74.0\", datatype=xsd:decimal) ]\n  \tValue Node: Literal(\"-74.0\", datatype=xsd:decimal)\n  \tResult Path: wgs84:long\n  \tMessage: Longitude must fall within the City of Chicago bounding box (-88.0 to -87.5)\n  "
+            },
+            {
+              "shaclFile": "_sources/chicagoCrime/rules.shacl",
+              "focusNodes": {
+                "<https://platform.i-guide.io/def/chicago-crime/shapes/#CrimeRecordShape>": {
+                  "nodes": [
+                    "_:N17e09a7ae4b4400994d91e17ef484b83"
+                  ]
+                }
+              },
+              "isError": false,
+              "message": "Focus nodes for _sources/chicagoCrime/rules.shacl:\n - Shape <https://platform.i-guide.io/def/chicago-crime/shapes/#CrimeRecordShape>: _:N17e09a7ae4b4400994d91e17ef484b83\n"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "source": {
+        "type": "TEST_RESOURCE",
+        "requireFail": true,
+        "filename": "_sources/chicagoCrime/tests/record-schema-fail.json",
+        "url": "https://raw.githubusercontent.com/I-GUIDE/ogc-bblock-iguide/undefined/_sources/chicagoCrime/tests/record-schema-fail.json",
+        "language": "json"
+      },
+      "result": true,
+      "sections": [
+        {
+          "name": "GENERAL",
+          "title": "General",
+          "entries": [
+            {
+              "op": "require-fail",
+              "isError": false,
+              "message": "Test was expected to fail and it did."
+            }
+          ]
+        },
+        {
+          "name": "FILES",
+          "title": "Files",
+          "entries": [
+            {
+              "isError": false,
+              "message": "Using record-schema-fail.json from test resources"
+            },
+            {
+              "op": "jsonld-uplift",
+              "isError": false,
+              "message": "JSON-LD context is present - uplifting"
+            },
+            {
+              "op": "jsonld-create",
+              "filename": "record-schema-fail.jsonld",
+              "isError": false,
+              "message": "Output JSON-LD record-schema-fail.jsonld created"
+            },
+            {
+              "op": "ttl-create",
+              "empty": false,
+              "filename": "record-schema-fail.ttl",
+              "size": 21,
+              "isError": false,
+              "message": "Output Turtle record-schema-fail.ttl created"
+            }
+          ]
+        },
+        {
+          "name": "JSON_SCHEMA",
+          "title": "JSON Schema",
+          "entries": [
+            {
+              "op": "validation",
+              "result": false,
+              "exception": "ValidationError",
+              "errorMessage": "'case_number' is a required property",
+              "isError": true,
+              "message": "ValidationError: 'case_number' is a required property\n\nFailed validating 'required' in schema:\n    {'$defs': {'LocalDateTime': {'pattern': '^[0-9]{4}-[0-9]{2}-[0-9]{2}T[0-9]{2}:[0-9]{2}:[0-9]{2}$',\n                                 'type': 'string'},\n               'Point': {'properties': {'coordinates': {'items': {'type': 'number'},\n                                                        'maxItems': 2,\n                                                        'minItems': 2,\n                                                        'type': 'array'},\n                                        'type': {'const': 'Point'}},\n                         'required': ['type', 'coordinates'],\n                         'type': 'object'}},\n     '$schema': 'https://json-schema.org/draft/2020-12/schema',\n     'description': 'A single reported crime incident from the City of '\n                    'Chicago \"Crimes - 2001 to Present\" dataset.\\n'\n                    'Property names follow the Chicago Data Portal '\n                    '(Socrata) API field names; values are typed\\n'\n                    '(booleans, numbers, ISO 8601 date-times, GeoJSON) '\n                    'rather than the all-string CSV export.\\n',\n     'properties': {'arrest': {'description': 'Whether an arrest was made '\n                                              '(CSV column \"Arrest\").',\n                               'type': 'boolean',\n                               'x-jsonld-id': 'https://platform.i-guide.io/def/chicago-crime/arrest',\n                               'x-jsonld-type': 'http://www.w3.org/2001/XMLSchema#boolean'},\n                    'beat': {'description': 'Police beat where the '\n                                            'incident occurred; the '\n                                            'smallest police geographic '\n                                            'area (CSV column \"Beat\").',\n                             'pattern': '^[0-9]{4}$',\n                             'type': 'string',\n                             'x-jsonld-id': 'https://platform.i-guide.io/def/chicago-crime/beat'},\n                    'block': {'description': 'Partially redacted address, '\n                                             'placing the incident on the '\n                                             'same block as the actual '\n                                             'address (CSV column '\n                                             '\"Block\").',\n                              'type': 'string',\n                              'x-jsonld-id': 'https://platform.i-guide.io/def/chicago-crime/block'},\n                    'case_number': {'description': 'Chicago Police '\n                                                   'Department Records '\n                                                   'Division number, '\n                                                   'unique to the incident '\n                                                   '(CSV column \"Case '\n                                                   'Number\").',\n                                    'type': 'string',\n                                    'x-jsonld-id': 'https://platform.i-guide.io/def/chicago-crime/caseNumber'},\n                    'community_area': {'description': 'Community area '\n                                                      'where the incident '\n                                                      'occurred; Chicago '\n                                                      'has 77 community '\n                                                      'areas (CSV column '\n                                                      '\"Community Area\").',\n                                       'maximum': 77,\n                                       'minimum': 1,\n                                       'type': ['integer', 'null'],\n                                       'x-jsonld-id': 'https://platform.i-guide.io/def/chicago-crime/communityArea',\n                                       'x-jsonld-type': 'http://www.w3.org/2001/XMLSchema#integer'},\n                    'date': {'$ref': '#/$defs/LocalDateTime',\n                             'description': 'Date and local '\n                                            '(America/Chicago) time when '\n                                            'the incident occurred, '\n                                            'sometimes a best estimate '\n                                            '(CSV column \"Date\", converted '\n                                            'from \"MM/DD/YYYY hh:mm:ss AM\" '\n                                            'to ISO 8601 without offset).',\n                             'x-jsonld-id': 'https://platform.i-guide.io/def/chicago-crime/date',\n                             'x-jsonld-type': 'http://www.w3.org/2001/XMLSchema#dateTime'},\n                    'description': {'description': 'Secondary description '\n                                                   'of the IUCR code (CSV '\n                                                   'column \"Description\").',\n                                    'type': 'string',\n                                    'x-jsonld-id': 'https://platform.i-guide.io/def/chicago-crime/description'},\n                    'district': {'description': 'Police district where the '\n                                                'incident occurred (CSV '\n                                                'column \"District\").',\n                                 'pattern': '^[0-9]{3}$',\n                                 'type': ['string', 'null'],\n                                 'x-jsonld-id': 'https://platform.i-guide.io/def/chicago-crime/district'},\n                    'domestic': {'description': 'Whether the incident was '\n                                                'domestic-related as '\n                                                'defined by the Illinois '\n                                                'Domestic Violence Act '\n                                                '(CSV column \"Domestic\").',\n                                 'type': 'boolean',\n                                 'x-jsonld-id': 'https://platform.i-guide.io/def/chicago-crime/domestic',\n                                 'x-jsonld-type': 'http://www.w3.org/2001/XMLSchema#boolean'},\n                    'fbi_code': {'description': 'Crime classification per '\n                                                'the FBI National '\n                                                'Incident-Based Reporting '\n                                                'System (CSV column \"FBI '\n                                                'Code\").',\n                                 'pattern': '^[0-9]{2}[A-Z]?$',\n                                 'type': 'string',\n                                 'x-jsonld-id': 'https://platform.i-guide.io/def/chicago-crime/fbiCode'},\n                    'id': {'description': 'Unique identifier for the '\n                                          'record (CSV column \"ID\").',\n                           'pattern': '^[0-9]+$',\n                           'type': 'string',\n                           'x-jsonld-id': 'http://purl.org/dc/terms/identifier'},\n                    'iucr': {'description': 'Illinois Uniform Crime '\n                                            'Reporting code (CSV column '\n                                            '\"IUCR\").',\n                             'pattern': '^[0-9A-Z]{4}$',\n                             'type': 'string',\n                             'x-jsonld-id': 'https://platform.i-guide.io/def/chicago-crime/iucr'},\n                    'latitude': {'description': 'WGS 84 latitude of the '\n                                                '(shifted) incident '\n                                                'location (CSV column '\n                                                '\"Latitude\").',\n                                 'maximum': 90,\n                                 'minimum': -90,\n                                 'type': ['number', 'null'],\n                                 'x-jsonld-id': 'http://www.w3.org/2003/01/geo/wgs84_pos#lat',\n                                 'x-jsonld-type': 'http://www.w3.org/2001/XMLSchema#decimal'},\n                    'location': {'description': 'Incident location as a '\n                                                'GeoJSON Point (WGS 84 '\n                                                'longitude, latitude). The '\n                                                'CSV column \"Location\" '\n                                                'carries the same point as '\n                                                'WKT, e.g. \"POINT '\n                                                '(-87.654831089 '\n                                                '41.772324861)\".',\n                                 'oneOf': [{'$ref': '#/$defs/Point'},\n                                           {'type': 'null'}],\n                                 'x-jsonld-id': 'http://www.opengis.net/ont/geosparql#hasGeometry',\n                                 'x-jsonld-type': '@json'},\n                    'location_description': {'description': 'Description '\n                                                            'of the '\n                                                            'location '\n                                                            'where the '\n                                                            'incident '\n                                                            'occurred (CSV '\n                                                            'column '\n                                                            '\"Location '\n                                                            'Description\").',\n                                             'type': ['string', 'null'],\n                                             'x-jsonld-id': 'https://platform.i-guide.io/def/chicago-crime/locationDescription'},\n                    'longitude': {'description': 'WGS 84 longitude of the '\n                                                 '(shifted) incident '\n                                                 'location (CSV column '\n                                                 '\"Longitude\").',\n                                  'maximum': 180,\n                                  'minimum': -180,\n                                  'type': ['number', 'null'],\n                                  'x-jsonld-id': 'http://www.w3.org/2003/01/geo/wgs84_pos#long',\n                                  'x-jsonld-type': 'http://www.w3.org/2001/XMLSchema#decimal'},\n                    'primary_type': {'description': 'Primary description '\n                                                    'of the IUCR code (CSV '\n                                                    'column \"Primary '\n                                                    'Type\").',\n                                     'type': 'string',\n                                     'x-jsonld-id': 'https://platform.i-guide.io/def/chicago-crime/primaryType'},\n                    'updated_on': {'$ref': '#/$defs/LocalDateTime',\n                                   'description': 'Date and local time the '\n                                                  'record was last updated '\n                                                  '(CSV column \"Updated '\n                                                  'On\").',\n                                   'x-jsonld-id': 'http://purl.org/dc/terms/modified',\n                                   'x-jsonld-type': 'http://www.w3.org/2001/XMLSchema#dateTime'},\n                    'ward': {'description': 'City Council district (ward) '\n                                            'where the incident occurred '\n                                            '(CSV column \"Ward\").',\n                             'maximum': 50,\n                             'minimum': 1,\n                             'type': ['integer', 'null'],\n                             'x-jsonld-id': 'https://platform.i-guide.io/def/chicago-crime/ward',\n                             'x-jsonld-type': 'http://www.w3.org/2001/XMLSchema#integer'},\n                    'x_coordinate': {'description': 'X coordinate of the '\n                                                    '(shifted) incident '\n                                                    'location in State '\n                                                    'Plane Illinois East '\n                                                    'NAD 1983 projection, '\n                                                    'US feet (EPSG:3435) '\n                                                    '(CSV column \"X '\n                                                    'Coordinate\").',\n                                     'type': ['number', 'null'],\n                                     'x-jsonld-id': 'https://platform.i-guide.io/def/chicago-crime/xCoordinate',\n                                     'x-jsonld-type': 'http://www.w3.org/2001/XMLSchema#decimal'},\n                    'y_coordinate': {'description': 'Y coordinate of the '\n                                                    '(shifted) incident '\n                                                    'location in State '\n                                                    'Plane Illinois East '\n                                                    'NAD 1983 projection, '\n                                                    'US feet (EPSG:3435) '\n                                                    '(CSV column \"Y '\n                                                    'Coordinate\").',\n                                     'type': ['number', 'null'],\n                                     'x-jsonld-id': 'https://platform.i-guide.io/def/chicago-crime/yCoordinate',\n                                     'x-jsonld-type': 'http://www.w3.org/2001/XMLSchema#decimal'},\n                    'year': {'description': 'Year the incident occurred '\n                                            '(CSV column \"Year\").',\n                             'minimum': 2001,\n                             'type': 'integer',\n                             'x-jsonld-id': 'https://platform.i-guide.io/def/chicago-crime/year',\n                             'x-jsonld-type': 'http://www.w3.org/2001/XMLSchema#gYear'}},\n     'required': ['id',\n                  'case_number',\n                  'date',\n                  'iucr',\n                  'primary_type',\n                  'arrest',\n                  'domestic',\n                  'beat',\n                  'fbi_code',\n                  'year'],\n     'title': 'Chicago Crime Record',\n     'type': 'object',\n     'x-jsonld-prefixes': {'ccr': 'https://platform.i-guide.io/def/chicago-crime/',\n                           'dct': 'http://purl.org/dc/terms/',\n                           'geo': 'http://www.opengis.net/ont/geosparql#',\n                           'wgs84': 'http://www.w3.org/2003/01/geo/wgs84_pos#',\n                           'xsd': 'http://www.w3.org/2001/XMLSchema#'}}\n\nOn instance:\n    {'arrest': False,\n     'beat': 724,\n     'block': '012XX W MARQUETTE RD',\n     'community_area': 67,\n     'date': '2026-07-26T00:00:00',\n     'description': 'TO PROPERTY',\n     'district': '007',\n     'domestic': False,\n     'fbi_code': '14',\n     'id': '14276240',\n     'iucr': '1310',\n     'latitude': 41.772324861,\n     'location': {'coordinates': [-87.654831089, 41.772324861],\n                  'type': 'Point'},\n     'location_description': 'APARTMENT',\n     'longitude': -87.654831089,\n     'primary_type': 'CRIMINAL DAMAGE',\n     'updated_on': '2026-08-02T15:44:42',\n     'ward': 17,\n     'x_coordinate': 1169332,\n     'y_coordinate': 1860356,\n     'year': 2026}"
+            }
+          ]
+        },
+        {
+          "name": "SHACL",
+          "title": "SHACL",
+          "entries": [
+            {
+              "op": "shacl-report",
+              "shaclFile": "_sources/chicagoCrime/rules.shacl",
+              "graph": "@prefix sh: <http://www.w3.org/ns/shacl#> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\n[] a sh:ValidationReport ;\n    sh:conforms true .\n\n",
+              "isError": false,
+              "message": "Validation result for _sources/chicagoCrime/rules.shacl:\n  Validation Report\n  Conforms: True\n  "
+            },
+            {
+              "shaclFile": "_sources/chicagoCrime/rules.shacl",
+              "focusNodes": {
+                "<https://platform.i-guide.io/def/chicago-crime/shapes/#CrimeRecordShape>": {
+                  "nodes": []
+                }
+              },
+              "isError": false,
+              "message": "Focus nodes for _sources/chicagoCrime/rules.shacl:\n - Shape <https://platform.i-guide.io/def/chicago-crime/shapes/#CrimeRecordShape>: *none*\n"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "source": {
+        "type": "TEST_RESOURCE",
+        "requireFail": false,
+        "filename": "_sources/chicagoCrime/tests/record-valid.json",
+        "url": "https://raw.githubusercontent.com/I-GUIDE/ogc-bblock-iguide/undefined/_sources/chicagoCrime/tests/record-valid.json",
+        "language": "json"
+      },
+      "result": true,
+      "sections": [
+        {
+          "name": "FILES",
+          "title": "Files",
+          "entries": [
+            {
+              "isError": false,
+              "message": "Using record-valid.json from test resources"
+            },
+            {
+              "op": "jsonld-uplift",
+              "isError": false,
+              "message": "JSON-LD context is present - uplifting"
+            },
+            {
+              "op": "jsonld-create",
+              "filename": "record-valid.jsonld",
+              "isError": false,
+              "message": "Output JSON-LD record-valid.jsonld created"
+            },
+            {
+              "op": "ttl-create",
+              "empty": false,
+              "filename": "record-valid.ttl",
+              "size": 22,
+              "isError": false,
+              "message": "Output Turtle record-valid.ttl created"
+            }
+          ]
+        },
+        {
+          "name": "JSON_SCHEMA",
+          "title": "JSON Schema",
+          "entries": [
+            {
+              "op": "validation",
+              "result": true,
+              "isError": false,
+              "message": "Validation passed"
+            }
+          ]
+        },
+        {
+          "name": "SHACL",
+          "title": "SHACL",
+          "entries": [
+            {
+              "op": "shacl-report",
+              "shaclFile": "_sources/chicagoCrime/rules.shacl",
+              "graph": "@prefix sh: <http://www.w3.org/ns/shacl#> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\n[] a sh:ValidationReport ;\n    sh:conforms true .\n\n",
+              "isError": false,
+              "message": "Validation result for _sources/chicagoCrime/rules.shacl:\n  Validation Report\n  Conforms: True\n  "
+            },
+            {
+              "shaclFile": "_sources/chicagoCrime/rules.shacl",
+              "focusNodes": {
+                "<https://platform.i-guide.io/def/chicago-crime/shapes/#CrimeRecordShape>": {
+                  "nodes": [
+                    "_:Nd6316ce93ab746df83c22a6c72d05f04"
+                  ]
+                }
+              },
+              "isError": false,
+              "message": "Focus nodes for _sources/chicagoCrime/rules.shacl:\n - Shape <https://platform.i-guide.io/def/chicago-crime/shapes/#CrimeRecordShape>: _:Nd6316ce93ab746df83c22a6c72d05f04\n"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "source": {
+        "type": "EXAMPLE",
+        "requireFail": false,
+        "filename": "build/tests/bbr/chicagoCrime/example_1_1.json",
+        "url": "https://raw.githubusercontent.com/I-GUIDE/ogc-bblock-iguide/undefined/build/tests/bbr/chicagoCrime/example_1_1.json",
+        "exampleIndex": 1,
+        "snippetIndex": 1,
+        "language": "application/json"
+      },
+      "result": true,
+      "sections": [
+        {
+          "name": "FILES",
+          "title": "Files",
+          "entries": [
+            {
+              "isError": false,
+              "message": "Using examples/record.json from examples"
+            },
+            {
+              "op": "jsonld-uplift",
+              "isError": false,
+              "message": "JSON-LD context is present - uplifting"
+            },
+            {
+              "op": "jsonld-create",
+              "filename": "example_1_1.jsonld",
+              "isError": false,
+              "message": "Output JSON-LD example_1_1.jsonld created"
+            },
+            {
+              "op": "ttl-create",
+              "empty": false,
+              "filename": "example_1_1.ttl",
+              "size": 22,
+              "isError": false,
+              "message": "Output Turtle example_1_1.ttl created"
+            }
+          ]
+        },
+        {
+          "name": "JSON_SCHEMA",
+          "title": "JSON Schema",
+          "entries": [
+            {
+              "op": "validation",
+              "result": true,
+              "isError": false,
+              "message": "Validation passed"
+            }
+          ]
+        },
+        {
+          "name": "SHACL",
+          "title": "SHACL",
+          "entries": [
+            {
+              "op": "shacl-report",
+              "shaclFile": "_sources/chicagoCrime/rules.shacl",
+              "graph": "@prefix sh: <http://www.w3.org/ns/shacl#> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\n[] a sh:ValidationReport ;\n    sh:conforms true .\n\n",
+              "isError": false,
+              "message": "Validation result for _sources/chicagoCrime/rules.shacl:\n  Validation Report\n  Conforms: True\n  "
+            },
+            {
+              "shaclFile": "_sources/chicagoCrime/rules.shacl",
+              "focusNodes": {
+                "<https://platform.i-guide.io/def/chicago-crime/shapes/#CrimeRecordShape>": {
+                  "nodes": [
+                    "_:Ne6f81b4cc4984241b73ed0d5a8327dee"
+                  ]
+                }
+              },
+              "isError": false,
+              "message": "Focus nodes for _sources/chicagoCrime/rules.shacl:\n - Shape <https://platform.i-guide.io/def/chicago-crime/shapes/#CrimeRecordShape>: _:Ne6f81b4cc4984241b73ed0d5a8327dee\n"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "source": {
+        "type": "EXAMPLE",
+        "requireFail": false,
+        "filename": "build/tests/bbr/chicagoCrime/example_2_1.json",
+        "url": "https://raw.githubusercontent.com/I-GUIDE/ogc-bblock-iguide/undefined/build/tests/bbr/chicagoCrime/example_2_1.json",
+        "exampleIndex": 2,
+        "snippetIndex": 1,
+        "language": "application/json"
+      },
+      "result": true,
+      "sections": [
+        {
+          "name": "FILES",
+          "title": "Files",
+          "entries": [
+            {
+              "isError": false,
+              "message": "Using examples/record-no-location.json from examples"
+            },
+            {
+              "op": "jsonld-uplift",
+              "isError": false,
+              "message": "JSON-LD context is present - uplifting"
+            },
+            {
+              "op": "jsonld-create",
+              "filename": "example_2_1.jsonld",
+              "isError": false,
+              "message": "Output JSON-LD example_2_1.jsonld created"
+            },
+            {
+              "op": "ttl-create",
+              "empty": false,
+              "filename": "example_2_1.ttl",
+              "size": 18,
+              "isError": false,
+              "message": "Output Turtle example_2_1.ttl created"
+            }
+          ]
+        },
+        {
+          "name": "JSON_SCHEMA",
+          "title": "JSON Schema",
+          "entries": [
+            {
+              "op": "validation",
+              "result": true,
+              "isError": false,
+              "message": "Validation passed"
+            }
+          ]
+        },
+        {
+          "name": "SHACL",
+          "title": "SHACL",
+          "entries": [
+            {
+              "op": "shacl-report",
+              "shaclFile": "_sources/chicagoCrime/rules.shacl",
+              "graph": "@prefix sh: <http://www.w3.org/ns/shacl#> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\n[] a sh:ValidationReport ;\n    sh:conforms true .\n\n",
+              "isError": false,
+              "message": "Validation result for _sources/chicagoCrime/rules.shacl:\n  Validation Report\n  Conforms: True\n  "
+            },
+            {
+              "shaclFile": "_sources/chicagoCrime/rules.shacl",
+              "focusNodes": {
+                "<https://platform.i-guide.io/def/chicago-crime/shapes/#CrimeRecordShape>": {
+                  "nodes": [
+                    "_:Ne481e25876eb4d31a1756f9d74283b75"
+                  ]
+                }
+              },
+              "isError": false,
+              "message": "Focus nodes for _sources/chicagoCrime/rules.shacl:\n - Shape <https://platform.i-guide.io/def/chicago-crime/shapes/#CrimeRecordShape>: _:Ne481e25876eb4d31a1756f9d74283b75\n"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "globalErrors": {},
+  "counts": {
+    "total": 5,
+    "passed": 5,
+    "failed": 0
+  }
+}

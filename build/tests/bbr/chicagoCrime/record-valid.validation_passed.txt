@@ -1,0 +1,23 @@
+Validation report for iguide.bbr.chicagoCrime - Chicago Crime Record
+Generated 2026-09-29T19:17:09.138110+00:00
+=== Files ===
+Using record-valid.json from test resources
+JSON-LD context is present - uplifting
+Output JSON-LD record-valid.jsonld created
+Output Turtle record-valid.ttl created
+=== End Files ===
+
+=== JSON Schema ===
+Validation passed
+=== End JSON Schema ===
+
+=== SHACL ===
+Validation result for _sources/chicagoCrime/rules.shacl:
+  Validation Report
+  Conforms: True
+  
+Focus nodes for _sources/chicagoCrime/rules.shacl:
+ - Shape <https://platform.i-guide.io/def/chicago-crime/shapes/#CrimeRecordShape>: _:Nd6316ce93ab746df83c22a6c72d05f04
+
+=== End SHACL ===
+

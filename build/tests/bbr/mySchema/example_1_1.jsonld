@@ -1,0 +1,11 @@
+{
+  "@context": [
+    {
+      "mynamespace": "http://example.com/mythings/"
+    },
+    "https://raw.githubusercontent.com/I-GUIDE/ogc-bblock-iguide/undefined/build/annotated/bbr/mySchema/context.jsonld"
+  ],
+  "a": "mynamespace:aThing",
+  "b": 23,
+  "c": 1
+}

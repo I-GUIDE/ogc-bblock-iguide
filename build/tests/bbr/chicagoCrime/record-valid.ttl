@@ -1,0 +1,30 @@
+@prefix ccr: <https://platform.i-guide.io/def/chicago-crime/> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix geo: <http://www.opengis.net/ont/geosparql#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix wgs84: <http://www.w3.org/2003/01/geo/wgs84_pos#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+[] dct:identifier "14276240" ;
+    dct:modified "2026-08-02T15:44:42"^^xsd:dateTime ;
+    geo:hasGeometry "{\"coordinates\":[-87.654831089,41.772324861],\"type\":\"Point\"}"^^rdf:JSON ;
+    wgs84:lat 41.772324861 ;
+    wgs84:long -87.654831089 ;
+    ccr:arrest false ;
+    ccr:beat "0724" ;
+    ccr:block "012XX W MARQUETTE RD" ;
+    ccr:caseNumber "JK350788" ;
+    ccr:communityArea 67 ;
+    ccr:date "2026-07-26T00:00:00"^^xsd:dateTime ;
+    ccr:description "TO PROPERTY" ;
+    ccr:district "007" ;
+    ccr:domestic false ;
+    ccr:fbiCode "14" ;
+    ccr:iucr "1310" ;
+    ccr:locationDescription "APARTMENT" ;
+    ccr:primaryType "CRIMINAL DAMAGE" ;
+    ccr:ward 17 ;
+    ccr:xCoordinate 1169332.0 ;
+    ccr:yCoordinate 1860356.0 ;
+    ccr:year "2026"^^xsd:gYear .
+

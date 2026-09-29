@@ -1,0 +1,10 @@
+Validation report for iguide.bbr.myFeature - Custom Feature
+Generated 2026-09-29T19:17:09.411074+00:00
+=== Files ===
+Using example_1_2.yaml from examples
+=== End Files ===
+
+=== JSON Schema ===
+Validation passed
+=== End JSON Schema ===
+

@@ -1,0 +1,143 @@
+
+
+{
+  "itemIdentifier": "iguide.bbr.chicagoCrime",
+  "$schema": "metaschema.yaml",
+  "name": "Chicago Crime Record",
+  "abstract": "Schema and semantic annotation for a single reported crime incident from the City of Chicago 'Crimes - 2001 to Present' dataset, as published on the I-GUIDE Platform (Chicago Crime data 2026).",
+  "status": "under-development",
+  "dateTimeAddition": "2026-09-29T00:00:00Z",
+  "itemClass": "schema",
+  "register": "iguide-building-block-register",
+  "version": "0.1",
+  "link": "https://platform.i-guide.io/datasets/265e6957-7ecf-48e0-a179-b498533eb627",
+  "sources": [
+    {
+      "title": "I-GUIDE Platform - Chicago Crime data 2026",
+      "link": "https://platform.i-guide.io/datasets/265e6957-7ecf-48e0-a179-b498533eb627"
+    },
+    {
+      "title": "Chicago Data Portal - Crimes - 2001 to Present",
+      "link": "https://data.cityofchicago.org/Public-Safety/Crimes-2001-to-Present/ijzp-q8t2"
+    }
+  ],
+  "tags": [
+    "crime",
+    "public-safety",
+    "chicago",
+    "i-guide",
+    "dataset"
+  ],
+  "group": "I-GUIDE Datasets",
+  "shaclShapes": {
+    "iguide.bbr.chicagoCrime": [
+      "https://raw.githubusercontent.com/I-GUIDE/ogc-bblock-iguide/undefined/_sources/chicagoCrime/rules.shacl"
+    ]
+  },
+  "ldContext": "https://raw.githubusercontent.com/I-GUIDE/ogc-bblock-iguide/undefined/build/annotated/bbr/chicagoCrime/context.jsonld",
+  "dateOfLastChange": "2026-09-29",
+  "schema": {
+    "application/yaml": "https://raw.githubusercontent.com/I-GUIDE/ogc-bblock-iguide/undefined/build/annotated/bbr/chicagoCrime/schema.yaml",
+    "application/json": "https://raw.githubusercontent.com/I-GUIDE/ogc-bblock-iguide/undefined/build/annotated/bbr/chicagoCrime/schema.json"
+  },
+  "sourceSchema": "https://raw.githubusercontent.com/I-GUIDE/ogc-bblock-iguide/undefined/_sources/chicagoCrime/schema.yaml",
+  "sourceLdContext": "https://raw.githubusercontent.com/I-GUIDE/ogc-bblock-iguide/undefined/_sources/chicagoCrime/context.jsonld",
+  "resolvedSchemaProperties": "https://raw.githubusercontent.com/I-GUIDE/ogc-bblock-iguide/undefined/build/annotated/bbr/chicagoCrime/resolvedProperties.json",
+  "sourceFiles": "https://raw.githubusercontent.com/I-GUIDE/ogc-bblock-iguide/undefined/_sources/chicagoCrime/",
+  "validationPassed": true,
+  "testOutputs": "https://github.com/I-GUIDE/ogc-bblock-iguide/blob/master/build/tests/bbr/chicagoCrime/",
+  "description": "## Chicago Crime Record\n\nDescribes a single reported crime incident from the City of Chicago\n[Crimes - 2001 to Present](https://data.cityofchicago.org/Public-Safety/Crimes-2001-to-Present/ijzp-q8t2)\ndataset. The I-GUIDE Platform publishes yearly extracts of it; this building block was created for\n[Chicago Crime data 2026](https://platform.i-guide.io/datasets/265e6957-7ecf-48e0-a179-b498533eb627)\n(source: Chicago Data Portal, contributed by Yunfan Kang), but it applies to any year.\n\n### Data access\n\n```python\nfrom urllib.request import urlretrieve\nurlretrieve(\"https://storage.i-guide.io/datasets/265e6957-7ecf-48e0-a179-b498533eb627/export.csv\")\n```\n\n### Mapping from the CSV export\n\nThe CSV export stores every value as a quoted string. This building block defines a typed JSON\nrepresentation whose property names match the Chicago Data Portal API field names:\n\n| CSV column | Property | Type |\n|---|---|---|\n| ID | `id` | string (digits) |\n| Case Number | `case_number` | string |\n| Date | `date` | ISO 8601 local date-time |\n| Block | `block` | string |\n| IUCR | `iucr` | string (4 characters) |\n| Primary Type | `primary_type` | string |\n| Description | `description` | string |\n| Location Description | `location_description` | string or null |\n| Arrest | `arrest` | boolean |\n| Domestic | `domestic` | boolean |\n| Beat | `beat` | string (4 digits, leading zeros kept) |\n| District | `district` | string (3 digits) or null |\n| Ward | `ward` | integer 1\u201350 or null |\n| Community Area | `community_area` | integer 1\u201377 or null |\n| FBI Code | `fbi_code` | string (e.g. `08B`) |\n| X Coordinate / Y Coordinate | `x_coordinate` / `y_coordinate` | number (EPSG:3435, US feet) or null |\n| Year | `year` | integer |\n| Updated On | `updated_on` | ISO 8601 local date-time |\n| Latitude / Longitude | `latitude` / `longitude` | number (WGS 84) or null |\n| Location (WKT) | `location` | GeoJSON Point or null |\n\nDate-times are Chicago local time and carry no UTC offset. Locations are shifted from the actual\naddress for privacy, but stay on the same block.\n\n### Semantics and validation\n\nThe JSON-LD context maps identifiers and timestamps to Dublin Core terms, latitude/longitude to the\nW3C WGS 84 vocabulary, the location to GeoSPARQL `geo:hasGeometry`, and the remaining fields to a\ndataset-specific namespace (`https://platform.i-guide.io/def/chicago-crime/`). SHACL rules check that\neach record has a single identifier and case number, and that coordinates fall within Chicago's\nbounding box.\n",
+  "examples": [
+    {
+      "title": "Geolocated crime record",
+      "content": "A criminal damage incident from the 2026 extract, converted from the CSV export\nto typed JSON with a GeoJSON Point location.",
+      "base-uri": "https://platform.i-guide.io/datasets/265e6957-7ecf-48e0-a179-b498533eb627/records/",
+      "snippets": [
+        {
+          "language": "json",
+          "ref": "https://raw.githubusercontent.com/I-GUIDE/ogc-bblock-iguide/undefined/_sources/chicagoCrime/examples/record.json",
+          "url": "https://raw.githubusercontent.com/I-GUIDE/ogc-bblock-iguide/undefined/build/tests/bbr/chicagoCrime/example_1_1.json",
+          "sizeBytes": 641,
+          "code": "{\n  \"id\": \"14276240\",\n  \"case_number\": \"JK350788\",\n  \"date\": \"2026-07-26T00:00:00\",\n  \"block\": \"012XX W MARQUETTE RD\",\n  \"iucr\": \"1310\",\n  \"primary_type\": \"CRIMINAL DAMAGE\",\n  \"description\": \"TO PROPERTY\",\n  \"location_description\": \"APARTMENT\",\n  \"arrest\": false,\n  \"domestic\": false,\n  \"beat\": \"0724\",\n  \"district\": \"007\",\n  \"ward\": 17,\n  \"community_area\": 67,\n  \"fbi_code\": \"14\",\n  \"x_coordinate\": 1169332,\n  \"y_coordinate\": 1860356,\n  \"year\": 2026,\n  \"updated_on\": \"2026-08-02T15:44:42\",\n  \"latitude\": 41.772324861,\n  \"longitude\": -87.654831089,\n  \"location\": {\n    \"type\": \"Point\",\n    \"coordinates\": [-87.654831089, 41.772324861]\n  }\n}\n"
+        },
+        {
+          "language": "jsonld",
+          "url": "https://raw.githubusercontent.com/I-GUIDE/ogc-bblock-iguide/undefined/build/tests/bbr/chicagoCrime/example_1_1.jsonld",
+          "sizeBytes": 1033,
+          "code": "{\n  \"@context\": [\n    {\n      \"ccr\": \"https://platform.i-guide.io/def/chicago-crime/\",\n      \"dct\": \"http://purl.org/dc/terms/\",\n      \"geo\": \"http://www.opengis.net/ont/geosparql#\",\n      \"wgs84\": \"http://www.w3.org/2003/01/geo/wgs84_pos#\"\n    },\n    \"https://raw.githubusercontent.com/I-GUIDE/ogc-bblock-iguide/undefined/build/annotated/bbr/chicagoCrime/context.jsonld\"\n  ],\n  \"id\": \"14276240\",\n  \"case_number\": \"JK350788\",\n  \"date\": \"2026-07-26T00:00:00\",\n  \"block\": \"012XX W MARQUETTE RD\",\n  \"iucr\": \"1310\",\n  \"primary_type\": \"CRIMINAL DAMAGE\",\n  \"description\": \"TO PROPERTY\",\n  \"location_description\": \"APARTMENT\",\n  \"arrest\": false,\n  \"domestic\": false,\n  \"beat\": \"0724\",\n  \"district\": \"007\",\n  \"ward\": 17,\n  \"community_area\": 67,\n  \"fbi_code\": \"14\",\n  \"x_coordinate\": 1169332,\n  \"y_coordinate\": 1860356,\n  \"year\": 2026,\n  \"updated_on\": \"2026-08-02T15:44:42\",\n  \"latitude\": 41.772324861,\n  \"longitude\": -87.654831089,\n  \"location\": {\n    \"type\": \"Point\",\n    \"coordinates\": [\n      -87.654831089,\n      41.772324861\n    ]\n  }\n}"
+        },
+        {
+          "language": "ttl",
+          "url": "https://raw.githubusercontent.com/I-GUIDE/ogc-bblock-iguide/undefined/build/tests/bbr/chicagoCrime/example_1_1.ttl",
+          "sizeBytes": 1116,
+          "code": "@prefix ccr: <https://platform.i-guide.io/def/chicago-crime/> .\n@prefix dcterms: <http://purl.org/dc/terms/> .\n@prefix geo: <http://www.opengis.net/ont/geosparql#> .\n@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .\n@prefix wgs84: <http://www.w3.org/2003/01/geo/wgs84_pos#> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\n[] dcterms:identifier \"14276240\" ;\n    dcterms:modified \"2026-08-02T15:44:42\"^^xsd:dateTime ;\n    geo:hasGeometry \"{\\\"coordinates\\\":[-87.654831089,41.772324861],\\\"type\\\":\\\"Point\\\"}\"^^rdf:JSON ;\n    wgs84:lat 41.772324861 ;\n    wgs84:long -87.654831089 ;\n    ccr:arrest false ;\n    ccr:beat \"0724\" ;\n    ccr:block \"012XX W MARQUETTE RD\" ;\n    ccr:caseNumber \"JK350788\" ;\n    ccr:communityArea 67 ;\n    ccr:date \"2026-07-26T00:00:00\"^^xsd:dateTime ;\n    ccr:description \"TO PROPERTY\" ;\n    ccr:district \"007\" ;\n    ccr:domestic false ;\n    ccr:fbiCode \"14\" ;\n    ccr:iucr \"1310\" ;\n    ccr:locationDescription \"APARTMENT\" ;\n    ccr:primaryType \"CRIMINAL DAMAGE\" ;\n    ccr:ward 17 ;\n    ccr:xCoordinate 1169332.0 ;\n    ccr:yCoordinate 1860356.0 ;\n    ccr:year \"2026\"^^xsd:gYear .\n\n"
+        }
+      ],
+      "prefixes": {
+        "ccr": "https://platform.i-guide.io/def/chicago-crime/",
+        "dct": "http://purl.org/dc/terms/",
+        "geo": "http://www.opengis.net/ont/geosparql#",
+        "wgs84": "http://www.w3.org/2003/01/geo/wgs84_pos#"
+      }
+    },
+    {
+      "title": "Crime record without location",
+      "content": "Some records (e.g. certain domestic incidents) are published without coordinates.\nLocation-related properties are then `null`.",
+      "base-uri": "https://platform.i-guide.io/datasets/265e6957-7ecf-48e0-a179-b498533eb627/records/",
+      "snippets": [
+        {
+          "language": "json",
+          "ref": "https://raw.githubusercontent.com/I-GUIDE/ogc-bblock-iguide/undefined/_sources/chicagoCrime/examples/record-no-location.json",
+          "url": "https://raw.githubusercontent.com/I-GUIDE/ogc-bblock-iguide/undefined/build/tests/bbr/chicagoCrime/example_2_1.json",
+          "sizeBytes": 552,
+          "code": "{\n  \"id\": \"14281178\",\n  \"case_number\": \"JK355713\",\n  \"date\": \"2026-07-26T00:00:00\",\n  \"block\": \"054XX N EAST RIVER RD\",\n  \"iucr\": \"0486\",\n  \"primary_type\": \"BATTERY\",\n  \"description\": \"DOMESTIC BATTERY SIMPLE\",\n  \"location_description\": \"APARTMENT\",\n  \"arrest\": false,\n  \"domestic\": true,\n  \"beat\": \"1614\",\n  \"district\": \"016\",\n  \"ward\": 41,\n  \"community_area\": 76,\n  \"fbi_code\": \"08B\",\n  \"x_coordinate\": null,\n  \"y_coordinate\": null,\n  \"year\": 2026,\n  \"updated_on\": \"2026-08-02T15:44:42\",\n  \"latitude\": null,\n  \"longitude\": null,\n  \"location\": null\n}\n"
+        },
+        {
+          "language": "jsonld",
+          "url": "https://raw.githubusercontent.com/I-GUIDE/ogc-bblock-iguide/undefined/build/tests/bbr/chicagoCrime/example_2_1.jsonld",
+          "sizeBytes": 926,
+          "code": "{\n  \"@context\": [\n    {\n      \"ccr\": \"https://platform.i-guide.io/def/chicago-crime/\",\n      \"dct\": \"http://purl.org/dc/terms/\",\n      \"geo\": \"http://www.opengis.net/ont/geosparql#\",\n      \"wgs84\": \"http://www.w3.org/2003/01/geo/wgs84_pos#\"\n    },\n    \"https://raw.githubusercontent.com/I-GUIDE/ogc-bblock-iguide/undefined/build/annotated/bbr/chicagoCrime/context.jsonld\"\n  ],\n  \"id\": \"14281178\",\n  \"case_number\": \"JK355713\",\n  \"date\": \"2026-07-26T00:00:00\",\n  \"block\": \"054XX N EAST RIVER RD\",\n  \"iucr\": \"0486\",\n  \"primary_type\": \"BATTERY\",\n  \"description\": \"DOMESTIC BATTERY SIMPLE\",\n  \"location_description\": \"APARTMENT\",\n  \"arrest\": false,\n  \"domestic\": true,\n  \"beat\": \"1614\",\n  \"district\": \"016\",\n  \"ward\": 41,\n  \"community_area\": 76,\n  \"fbi_code\": \"08B\",\n  \"x_coordinate\": null,\n  \"y_coordinate\": null,\n  \"year\": 2026,\n  \"updated_on\": \"2026-08-02T15:44:42\",\n  \"latitude\": null,\n  \"longitude\": null,\n  \"location\": null\n}"
+        },
+        {
+          "language": "ttl",
+          "url": "https://raw.githubusercontent.com/I-GUIDE/ogc-bblock-iguide/undefined/build/tests/bbr/chicagoCrime/example_2_1.ttl",
+          "sizeBytes": 876,
+          "code": "@prefix ccr: <https://platform.i-guide.io/def/chicago-crime/> .\n@prefix dcterms: <http://purl.org/dc/terms/> .\n@prefix geo: <http://www.opengis.net/ont/geosparql#> .\n@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\n[] dcterms:identifier \"14281178\" ;\n    dcterms:modified \"2026-08-02T15:44:42\"^^xsd:dateTime ;\n    geo:hasGeometry \"null\"^^rdf:JSON ;\n    ccr:arrest false ;\n    ccr:beat \"1614\" ;\n    ccr:block \"054XX N EAST RIVER RD\" ;\n    ccr:caseNumber \"JK355713\" ;\n    ccr:communityArea 76 ;\n    ccr:date \"2026-07-26T00:00:00\"^^xsd:dateTime ;\n    ccr:description \"DOMESTIC BATTERY SIMPLE\" ;\n    ccr:district \"016\" ;\n    ccr:domestic true ;\n    ccr:fbiCode \"08B\" ;\n    ccr:iucr \"0486\" ;\n    ccr:locationDescription \"APARTMENT\" ;\n    ccr:primaryType \"BATTERY\" ;\n    ccr:ward 41 ;\n    ccr:year \"2026\"^^xsd:gYear .\n\n"
+        }
+      ],
+      "prefixes": {
+        "ccr": "https://platform.i-guide.io/def/chicago-crime/",
+        "dct": "http://purl.org/dc/terms/",
+        "geo": "http://www.opengis.net/ont/geosparql#",
+        "wgs84": "http://www.w3.org/2003/01/geo/wgs84_pos#"
+      }
+    },
+    {
+      "title": "Converting the I-GUIDE CSV export",
+      "content": "The dataset is distributed on the I-GUIDE Platform as a CSV file in which every value is a\nstring. This script downloads it and converts each row into a record conforming to this\nbuilding block.",
+      "snippets": [
+        {
+          "language": "python",
+          "url": "https://raw.githubusercontent.com/I-GUIDE/ogc-bblock-iguide/undefined/build/tests/bbr/chicagoCrime/example_3_1.python",
+          "sizeBytes": 1487,
+          "code": "import csv, json\nfrom datetime import datetime\nfrom urllib.request import urlretrieve\n\nURL = \"https://storage.i-guide.io/datasets/265e6957-7ecf-48e0-a179-b498533eb627/export.csv\"\npath, _ = urlretrieve(URL)\n\ndef dt(s):\n    return datetime.strptime(s, \"%m/%d/%Y %I:%M:%S %p\").isoformat() if s else None\n\ndef num(s, cast=float):\n    return cast(s) if s else None\n\ndef to_record(r):\n    lat, lon = num(r[\"Latitude\"]), num(r[\"Longitude\"])\n    return {\n        \"id\": r[\"ID\"],\n        \"case_number\": r[\"Case Number\"],\n        \"date\": dt(r[\"Date\"]),\n        \"block\": r[\"Block\"],\n        \"iucr\": r[\"IUCR\"],\n        \"primary_type\": r[\"Primary Type\"],\n        \"description\": r[\"Description\"],\n        \"location_description\": r[\"Location Description\"] or None,\n        \"arrest\": r[\"Arrest\"] == \"true\",\n        \"domestic\": r[\"Domestic\"] == \"true\",\n        \"beat\": r[\"Beat\"],\n        \"district\": r[\"District\"] or None,\n        \"ward\": num(r[\"Ward\"], int),\n        \"community_area\": num(r[\"Community Area\"], int),\n        \"fbi_code\": r[\"FBI Code\"],\n        \"x_coordinate\": num(r[\"X Coordinate\"]),\n        \"y_coordinate\": num(r[\"Y Coordinate\"]),\n        \"year\": int(r[\"Year\"]),\n        \"updated_on\": dt(r[\"Updated On\"]),\n        \"latitude\": lat,\n        \"longitude\": lon,\n        \"location\": {\"type\": \"Point\", \"coordinates\": [lon, lat]} if lat is not None else None,\n    }\n\nwith open(path, newline=\"\") as f:\n    records = [to_record(r) for r in csv.DictReader(f)]\nprint(json.dumps(records[0], indent=2))"
+        }
+      ],
+      "prefixes": {
+        "ccr": "https://platform.i-guide.io/def/chicago-crime/",
+        "dct": "http://purl.org/dc/terms/",
+        "geo": "http://www.opengis.net/ont/geosparql#",
+        "wgs84": "http://www.w3.org/2003/01/geo/wgs84_pos#"
+      }
+    }
+  ],
+  "examplePrefixes": {
+    "ccr": "https://platform.i-guide.io/def/chicago-crime/",
+    "dct": "http://purl.org/dc/terms/",
+    "geo": "http://www.opengis.net/ont/geosparql#",
+    "wgs84": "http://www.w3.org/2003/01/geo/wgs84_pos#"
+  },
+  "annotatedSchema": "$schema: https://json-schema.org/draft/2020-12/schema\ntitle: Chicago Crime Record\ndescription: 'A single reported crime incident from the City of Chicago \"Crimes -\n  2001 to Present\" dataset.\n\n  Property names follow the Chicago Data Portal (Socrata) API field names; values\n  are typed\n\n  (booleans, numbers, ISO 8601 date-times, GeoJSON) rather than the all-string CSV\n  export.\n\n  '\ntype: object\nproperties:\n  id:\n    description: Unique identifier for the record (CSV column \"ID\").\n    type: string\n    pattern: ^[0-9]+$\n    x-jsonld-id: http://purl.org/dc/terms/identifier\n  case_number:\n    description: Chicago Police Department Records Division number, unique to the\n      incident (CSV column \"Case Number\").\n    type: string\n    x-jsonld-id: https://platform.i-guide.io/def/chicago-crime/caseNumber\n  date:\n    description: Date and local (America/Chicago) time when the incident occurred,\n      sometimes a best estimate (CSV column \"Date\", converted from \"MM/DD/YYYY hh:mm:ss\n      AM\" to ISO 8601 without offset).\n    $ref: '#/$defs/LocalDateTime'\n    x-jsonld-id: https://platform.i-guide.io/def/chicago-crime/date\n    x-jsonld-type: http://www.w3.org/2001/XMLSchema#dateTime\n  block:\n    description: Partially redacted address, placing the incident on the same block\n      as the actual address (CSV column \"Block\").\n    type: string\n    x-jsonld-id: https://platform.i-guide.io/def/chicago-crime/block\n  iucr:\n    description: Illinois Uniform Crime Reporting code (CSV column \"IUCR\").\n    type: string\n    pattern: ^[0-9A-Z]{4}$\n    x-jsonld-id: https://platform.i-guide.io/def/chicago-crime/iucr\n  primary_type:\n    description: Primary description of the IUCR code (CSV column \"Primary Type\").\n    type: string\n    x-jsonld-id: https://platform.i-guide.io/def/chicago-crime/primaryType\n  description:\n    description: Secondary description of the IUCR code (CSV column \"Description\").\n    type: string\n    x-jsonld-id: https://platform.i-guide.io/def/chicago-crime/description\n  location_description:\n    description: Description of the location where the incident occurred (CSV column\n      \"Location Description\").\n    type:\n    - string\n    - 'null'\n    x-jsonld-id: https://platform.i-guide.io/def/chicago-crime/locationDescription\n  arrest:\n    description: Whether an arrest was made (CSV column \"Arrest\").\n    type: boolean\n    x-jsonld-id: https://platform.i-guide.io/def/chicago-crime/arrest\n    x-jsonld-type: http://www.w3.org/2001/XMLSchema#boolean\n  domestic:\n    description: Whether the incident was domestic-related as defined by the Illinois\n      Domestic Violence Act (CSV column \"Domestic\").\n    type: boolean\n    x-jsonld-id: https://platform.i-guide.io/def/chicago-crime/domestic\n    x-jsonld-type: http://www.w3.org/2001/XMLSchema#boolean\n  beat:\n    description: Police beat where the incident occurred; the smallest police geographic\n      area (CSV column \"Beat\").\n    type: string\n    pattern: ^[0-9]{4}$\n    x-jsonld-id: https://platform.i-guide.io/def/chicago-crime/beat\n  district:\n    description: Police district where the incident occurred (CSV column \"District\").\n    type:\n    - string\n    - 'null'\n    pattern: ^[0-9]{3}$\n    x-jsonld-id: https://platform.i-guide.io/def/chicago-crime/district\n  ward:\n    description: City Council district (ward) where the incident occurred (CSV column\n      \"Ward\").\n    type:\n    - integer\n    - 'null'\n    minimum: 1\n    maximum: 50\n    x-jsonld-id: https://platform.i-guide.io/def/chicago-crime/ward\n    x-jsonld-type: http://www.w3.org/2001/XMLSchema#integer\n  community_area:\n    description: Community area where the incident occurred; Chicago has 77 community\n      areas (CSV column \"Community Area\").\n    type:\n    - integer\n    - 'null'\n    minimum: 1\n    maximum: 77\n    x-jsonld-id: https://platform.i-guide.io/def/chicago-crime/communityArea\n    x-jsonld-type: http://www.w3.org/2001/XMLSchema#integer\n  fbi_code:\n    description: Crime classification per the FBI National Incident-Based Reporting\n      System (CSV column \"FBI Code\").\n    type: string\n    pattern: ^[0-9]{2}[A-Z]?$\n    x-jsonld-id: https://platform.i-guide.io/def/chicago-crime/fbiCode\n  x_coordinate:\n    description: X coordinate of the (shifted) incident location in State Plane Illinois\n      East NAD 1983 projection, US feet (EPSG:3435) (CSV column \"X Coordinate\").\n    type:\n    - number\n    - 'null'\n    x-jsonld-id: https://platform.i-guide.io/def/chicago-crime/xCoordinate\n    x-jsonld-type: http://www.w3.org/2001/XMLSchema#decimal\n  y_coordinate:\n    description: Y coordinate of the (shifted) incident location in State Plane Illinois\n      East NAD 1983 projection, US feet (EPSG:3435) (CSV column \"Y Coordinate\").\n    type:\n    - number\n    - 'null'\n    x-jsonld-id: https://platform.i-guide.io/def/chicago-crime/yCoordinate\n    x-jsonld-type: http://www.w3.org/2001/XMLSchema#decimal\n  year:\n    description: Year the incident occurred (CSV column \"Year\").\n    type: integer\n    minimum: 2001\n    x-jsonld-id: https://platform.i-guide.io/def/chicago-crime/year\n    x-jsonld-type: http://www.w3.org/2001/XMLSchema#gYear\n  updated_on:\n    description: Date and local time the record was last updated (CSV column \"Updated\n      On\").\n    $ref: '#/$defs/LocalDateTime'\n    x-jsonld-id: http://purl.org/dc/terms/modified\n    x-jsonld-type: http://www.w3.org/2001/XMLSchema#dateTime\n  latitude:\n    description: WGS 84 latitude of the (shifted) incident location (CSV column \"Latitude\").\n    type:\n    - number\n    - 'null'\n    minimum: -90\n    maximum: 90\n    x-jsonld-id: http://www.w3.org/2003/01/geo/wgs84_pos#lat\n    x-jsonld-type: http://www.w3.org/2001/XMLSchema#decimal\n  longitude:\n    description: WGS 84 longitude of the (shifted) incident location (CSV column \"Longitude\").\n    type:\n    - number\n    - 'null'\n    minimum: -180\n    maximum: 180\n    x-jsonld-id: http://www.w3.org/2003/01/geo/wgs84_pos#long\n    x-jsonld-type: http://www.w3.org/2001/XMLSchema#decimal\n  location:\n    description: Incident location as a GeoJSON Point (WGS 84 longitude, latitude).\n      The CSV column \"Location\" carries the same point as WKT, e.g. \"POINT (-87.654831089\n      41.772324861)\".\n    oneOf:\n    - $ref: '#/$defs/Point'\n    - type: 'null'\n    x-jsonld-id: http://www.opengis.net/ont/geosparql#hasGeometry\n    x-jsonld-type: '@json'\nrequired:\n- id\n- case_number\n- date\n- iucr\n- primary_type\n- arrest\n- domestic\n- beat\n- fbi_code\n- year\n$defs:\n  LocalDateTime:\n    type: string\n    pattern: ^[0-9]{4}-[0-9]{2}-[0-9]{2}T[0-9]{2}:[0-9]{2}:[0-9]{2}$\n  Point:\n    type: object\n    required:\n    - type\n    - coordinates\n    properties:\n      type:\n        const: Point\n      coordinates:\n        type: array\n        minItems: 2\n        maxItems: 2\n        items:\n          type: number\nx-jsonld-prefixes:\n  dct: http://purl.org/dc/terms/\n  ccr: https://platform.i-guide.io/def/chicago-crime/\n  xsd: http://www.w3.org/2001/XMLSchema#\n  wgs84: http://www.w3.org/2003/01/geo/wgs84_pos#\n  geo: http://www.opengis.net/ont/geosparql#\n",
+  "gitRepository": "https://github.com/I-GUIDE/ogc-bblock-iguide",
+  "gitPath": "_sources/chicagoCrime"
+}

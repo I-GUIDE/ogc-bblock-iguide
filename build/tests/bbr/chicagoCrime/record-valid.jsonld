@@ -1,0 +1,31 @@
+{
+  "@context": "https://raw.githubusercontent.com/I-GUIDE/ogc-bblock-iguide/undefined/build/annotated/bbr/chicagoCrime/context.jsonld",
+  "id": "14276240",
+  "case_number": "JK350788",
+  "date": "2026-07-26T00:00:00",
+  "block": "012XX W MARQUETTE RD",
+  "iucr": "1310",
+  "primary_type": "CRIMINAL DAMAGE",
+  "description": "TO PROPERTY",
+  "location_description": "APARTMENT",
+  "arrest": false,
+  "domestic": false,
+  "beat": "0724",
+  "district": "007",
+  "ward": 17,
+  "community_area": 67,
+  "fbi_code": "14",
+  "x_coordinate": 1169332,
+  "y_coordinate": 1860356,
+  "year": 2026,
+  "updated_on": "2026-08-02T15:44:42",
+  "latitude": 41.772324861,
+  "longitude": -87.654831089,
+  "location": {
+    "type": "Point",
+    "coordinates": [
+      -87.654831089,
+      41.772324861
+    ]
+  }
+}

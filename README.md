@@ -1,17 +1,13 @@
-# OGC Building Block template
+# I-GUIDE OGC Building Blocks
 
-This template provides a working example of an [OGC Building Block](https:blocks.ogc.org). For more info see [the Documentation](https://ogcincubator.github.io/bblocks-docs/).
+[OGC Building Blocks](https://ogcincubator.github.io/bblocks-docs/) for datasets published on the
+[I-GUIDE Platform](https://platform.i-guide.io/).
 
-This template is a working automation recipe to define, test and document a set of Building Blocks.
+| Building block | Identifier | Dataset |
+|---|---|---|
+| [Chicago Crime Record](_sources/chicagoCrime) | `iguide.bbr.chicagoCrime` | [Chicago Crime data 2026](https://platform.i-guide.io/datasets/265e6957-7ecf-48e0-a179-b498533eb627) |
 
-The automation-generated documentation for this example is here: [https://opengeospatial.github.io/bblock-template/](https://opengeospatial.github.io/bblock-template/)
+Build and test locally with `./build.sh` (requires Docker), then preview with `./view.sh`.
 
-[Examples of using this with typical applications of OGC standards](https://github.com/ogcincubator/bblocks-examples)
-
-Please replace the contents of this README with information about your Building Block(s).
-
-# How to use this template
-
-[More information on design and usage](https://github.com/opengeospatial/bblock-template/blob/master/USAGE.md)
-
-
+Built from the [OGC Building Block template](https://github.com/opengeospatial/bblock-template);
+see [USAGE.md](USAGE.md) for how building blocks are structured and processed.

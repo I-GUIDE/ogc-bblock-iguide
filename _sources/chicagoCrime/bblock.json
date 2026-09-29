@@ -1,0 +1,23 @@
+{
+  "$schema": "metaschema.yaml",
+  "name": "Chicago Crime Record",
+  "abstract": "Schema and semantic annotation for a single reported crime incident from the City of Chicago 'Crimes - 2001 to Present' dataset, as published on the I-GUIDE Platform (Chicago Crime data 2026).",
+  "status": "under-development",
+  "dateTimeAddition": "2026-09-29T00:00:00Z",
+  "itemClass": "schema",
+  "register": "iguide-building-block-register",
+  "version": "0.1",
+  "link": "https://platform.i-guide.io/datasets/265e6957-7ecf-48e0-a179-b498533eb627",
+  "sources": [
+    {
+      "title": "I-GUIDE Platform - Chicago Crime data 2026",
+      "link": "https://platform.i-guide.io/datasets/265e6957-7ecf-48e0-a179-b498533eb627"
+    },
+    {
+      "title": "Chicago Data Portal - Crimes - 2001 to Present",
+      "link": "https://data.cityofchicago.org/Public-Safety/Crimes-2001-to-Present/ijzp-q8t2"
+    }
+  ],
+  "tags": ["crime", "public-safety", "chicago", "i-guide", "dataset"],
+  "group": "I-GUIDE Datasets"
+}

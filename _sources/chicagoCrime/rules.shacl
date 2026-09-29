@@ -1,0 +1,36 @@
+@prefix sh:    <http://www.w3.org/ns/shacl#> .
+@prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
+@prefix dct:   <http://purl.org/dc/terms/> .
+@prefix wgs84: <http://www.w3.org/2003/01/geo/wgs84_pos#> .
+@prefix ccr:   <https://platform.i-guide.io/def/chicago-crime/> .
+@base <https://platform.i-guide.io/def/chicago-crime/shapes/> .
+
+<#CrimeRecordShape>
+    a              sh:NodeShape ;
+    sh:targetSubjectsOf ccr:caseNumber ;
+    sh:property [
+        sh:path     dct:identifier ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:message  "A crime record must have exactly one identifier"
+    ] ;
+    sh:property [
+        sh:path     ccr:caseNumber ;
+        sh:maxCount 1 ;
+        sh:message  "A crime record must have exactly one case number"
+    ] ;
+    sh:property [
+        sh:path         wgs84:lat ;
+        sh:maxCount     1 ;
+        sh:minInclusive 41.6 ;
+        sh:maxInclusive 42.1 ;
+        sh:message      "Latitude must fall within the City of Chicago bounding box (41.6 to 42.1)"
+    ] ;
+    sh:property [
+        sh:path         wgs84:long ;
+        sh:maxCount     1 ;
+        sh:minInclusive -88.0 ;
+        sh:maxInclusive -87.5 ;
+        sh:message      "Longitude must fall within the City of Chicago bounding box (-88.0 to -87.5)"
+    ]
+.

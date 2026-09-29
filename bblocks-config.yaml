@@ -1,18 +1,17 @@
 # A short, descriptive name of this building block collection
-name: My OGC Building Blocks repository
+name: I-GUIDE Building Blocks
 
 # Short abstract for this collection (optional)
 abstract: |
-  This is an example text for the abstract. It should be short and to the point.
-  A "Tell me more" link will appear if there is an additional description with a longer explanation.
+  OGC Building Blocks describing datasets published on the [I-GUIDE Platform](https://platform.i-guide.io/).
 
 # Description for this collection (optional)
 description: |
-  The description can be longer. Both **the abstract** *and the description* support Markdown,
-  including [links](https://google.es).
+  Schemas, JSON-LD semantic annotations and SHACL rules for datasets hosted on the I-GUIDE Platform,
+  so that their records can be validated and published as linked data.
 
 # Customize the following prefix (will be prepended to the path of the building blocks):
-identifier-prefix: ogc.bbr.template.
+identifier-prefix: iguide.bbr.
 
 # List of imports ("default" is an alias for the main OGC Building Blocks Register).
 # An entry can also be an "@org/register" alias (e.g. "@ogc/main", equivalent to "default"),

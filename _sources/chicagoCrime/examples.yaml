@@ -1,0 +1,76 @@
+prefixes:
+  ccr: https://platform.i-guide.io/def/chicago-crime/
+  dct: http://purl.org/dc/terms/
+  geo: http://www.opengis.net/ont/geosparql#
+  wgs84: http://www.w3.org/2003/01/geo/wgs84_pos#
+
+examples:
+  - title: Geolocated crime record
+    content: |-
+      A criminal damage incident from the 2026 extract, converted from the CSV export
+      to typed JSON with a GeoJSON Point location.
+    base-uri: https://platform.i-guide.io/datasets/265e6957-7ecf-48e0-a179-b498533eb627/records/
+    snippets:
+      - language: json
+        ref: examples/record.json
+
+  - title: Crime record without location
+    content: |-
+      Some records (e.g. certain domestic incidents) are published without coordinates.
+      Location-related properties are then `null`.
+    base-uri: https://platform.i-guide.io/datasets/265e6957-7ecf-48e0-a179-b498533eb627/records/
+    snippets:
+      - language: json
+        ref: examples/record-no-location.json
+
+  - title: Converting the I-GUIDE CSV export
+    content: |-
+      The dataset is distributed on the I-GUIDE Platform as a CSV file in which every value is a
+      string. This script downloads it and converts each row into a record conforming to this
+      building block.
+    snippets:
+      - language: python
+        code: |-
+          import csv, json
+          from datetime import datetime
+          from urllib.request import urlretrieve
+
+          URL = "https://storage.i-guide.io/datasets/265e6957-7ecf-48e0-a179-b498533eb627/export.csv"
+          path, _ = urlretrieve(URL)
+
+          def dt(s):
+              return datetime.strptime(s, "%m/%d/%Y %I:%M:%S %p").isoformat() if s else None
+
+          def num(s, cast=float):
+              return cast(s) if s else None
+
+          def to_record(r):
+              lat, lon = num(r["Latitude"]), num(r["Longitude"])
+              return {
+                  "id": r["ID"],
+                  "case_number": r["Case Number"],
+                  "date": dt(r["Date"]),
+                  "block": r["Block"],
+                  "iucr": r["IUCR"],
+                  "primary_type": r["Primary Type"],
+                  "description": r["Description"],
+                  "location_description": r["Location Description"] or None,
+                  "arrest": r["Arrest"] == "true",
+                  "domestic": r["Domestic"] == "true",
+                  "beat": r["Beat"],
+                  "district": r["District"] or None,
+                  "ward": num(r["Ward"], int),
+                  "community_area": num(r["Community Area"], int),
+                  "fbi_code": r["FBI Code"],
+                  "x_coordinate": num(r["X Coordinate"]),
+                  "y_coordinate": num(r["Y Coordinate"]),
+                  "year": int(r["Year"]),
+                  "updated_on": dt(r["Updated On"]),
+                  "latitude": lat,
+                  "longitude": lon,
+                  "location": {"type": "Point", "coordinates": [lon, lat]} if lat is not None else None,
+              }
+
+          with open(path, newline="") as f:
+              records = [to_record(r) for r in csv.DictReader(f)]
+          print(json.dumps(records[0], indent=2))
